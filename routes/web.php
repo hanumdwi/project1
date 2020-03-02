@@ -40,30 +40,36 @@ Route::get('home', 'MyFirstController@home');
 Route::get('tentang', 'MyFirstController@tentang');
 */
 ///////////////////////////////////////////////////////////////
-
+/*
 Route::get('/', function () {
-    return view('master/customer/index');
-});
-
-Route::get('/about', function () {
-    $nama = 'Hanum';
-    return view('about', ['nama' => $nama]);
+    return view('index');
 });
 
 Route::get('/customer', function(){
     return view('master/customer/index');
 });
 
+Route::get('/user', function(){
+    return view('master/user/index');
+});
 
+Route::get('/product', function(){
+    return view('master/product/index');
+});
+
+Route::get('/categories', function(){
+    return view('master/categories/index');
+});
+*/
 /*
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
-*/
+
 Route::get('/admin', 'AdminController@tampil_admin');
 Route::get('admin/header', 'AdminController@tampil_header');
 Route::get('admin/footer', 'AdminController@tampil_footer');
 Route::get('admin/sidebar', 'AdminController@tampil_sidebar');
-
+*/
 ///////////////////////////////////////////////////////////////////
 
 Route::get('customer/index', 'master\controller_customer@index');

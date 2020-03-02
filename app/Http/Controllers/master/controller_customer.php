@@ -4,6 +4,7 @@ namespace App\Http\Controllers\master;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class controller_customer extends Controller
 {
@@ -14,7 +15,9 @@ class controller_customer extends Controller
      */
     public function index()
     {
-        return "Ini Halaman Index";
+        $customer = DB::table('customer')->get();
+        //dump($customer);
+        return view ('master/customer/index',['customer' =>$customer]);
     }
 
     /**

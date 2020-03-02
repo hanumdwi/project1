@@ -3,11 +3,14 @@
 @section('title', 'Customer')
 
 @section('container')
+   
+</ul>
+    <!-- End of Sidebar -->
     <div class="container">
     <div class="row">
     <div class="colum-10">
     <h1 class="mt-3">Daftar Customer</h1>
-    
+
     <table class="table">
     <div class="mt-3"></div>
         <thead class="thead-dark">
@@ -27,7 +30,7 @@
         <tbody>
         <tr>
         <th>
-        
+        @foreach($customer as $cus)
         </th>
         </tr>
         </tbody>
