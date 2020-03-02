@@ -8,31 +8,50 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    
-    <title>@yield('title')</title>
+    <title>Project Pertama</title>
   </head>
-
   <body>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
   <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Home</a>
-      <a class="nav-item nav-link" href="/about">About</a>
-      <a class="nav-item nav-link" href="/customer">Customer</a>
-      <a class="nav-item nav-link" href="/user">User</a>
-      <a class="nav-item nav-link" href="/product">Product</a>
-      <a class="nav-item nav-link" href="/categories">Categories</a>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/customer">Customer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/user">User</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/product">Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/categories">Categories</a>
+      </li>
+        </div>
+      </li>
+    </ul>
   </div>
-  </div>
+</div>
 </nav>
-    
-    @yield('container')
+
+    <div class="container">
+    <div class="row">
+    <div class="col-10">
+    <h1 class="mt-3">Hello, world!</h1>
+    </div>
+    </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

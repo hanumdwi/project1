@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -38,23 +38,62 @@ Route::post('formulir/proses', 'MyFirstController@proses');
 Route::get('home', 'MyFirstController@home');
 
 Route::get('tentang', 'MyFirstController@tentang');
-
+*/
 ///////////////////////////////////////////////////////////////
-/* 
+
 Route::get('/', function () {
-    return view('index');
+    return view('master/customer/index');
 });
 
 Route::get('/about', function () {
     $nama = 'Hanum';
     return view('about', ['nama' => $nama]);
 });
-*/
 
+Route::get('/customer', function(){
+    return view('master/customer/index');
+});
+
+
+/*
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
-
+*/
 Route::get('/admin', 'AdminController@tampil_admin');
 Route::get('admin/header', 'AdminController@tampil_header');
 Route::get('admin/footer', 'AdminController@tampil_footer');
 Route::get('admin/sidebar', 'AdminController@tampil_sidebar');
+
+///////////////////////////////////////////////////////////////////
+
+Route::get('customer/index', 'master\controller_customer@index');
+Route::get('customer/create', 'master\controller_customer@create');
+Route::get('customer/edit', 'master\controller_customer@edit');
+Route::get('customer/destroy', 'master\controller_customer@destroy');
+
+Route::get('product/index', 'master\controller_product@index');
+Route::get('product/create', 'master\controller_product@create');
+Route::get('product/edit', 'master\controller_product@edit');
+Route::get('product/destroy', 'master\controller_product@destroy');
+
+Route::get('categories/index', 'master\controller_categories@index');
+Route::get('categories/create', 'master\controller_categories@create');
+Route::get('categories/edit', 'master\controller_categories@edit');
+Route::get('categories/destroy', 'master\controller_categories@destroy');
+
+Route::get('user/index', 'master\controller_user@index');
+Route::get('user/create', 'master\controller_user@create');
+Route::get('user/edit', 'master\controller_user@edit');
+Route::get('user/destroy', 'master\controller_user@destroy');
+
+
+Route::get('sales/index', 'transaksi\controller_sales@index');
+Route::get('sales/create', 'transaksi\controller_sales@create');
+Route::get('sales/edit', 'transaksi\controller_sales@edit');
+Route::get('sales/destroy', 'transaksi\controller_sales@destroy');
+
+Route::get('detail_sales/index', 'transaksi\controller_detail_sales@index');
+Route::get('detail_sales/create', 'transaksi\controller_detail_sales@create');
+Route::get('detail_sales/edit', 'transaksi\controller_detail_sales@edit');
+Route::get('detail_sales/destroy', 'transaksi\controller_detail_sales@destroy');
+
