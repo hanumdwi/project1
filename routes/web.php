@@ -72,10 +72,16 @@ Route::get('admin/sidebar', 'AdminController@tampil_sidebar');
 */
 ///////////////////////////////////////////////////////////////////
 
-Route::get('customer/index', 'master\controller_customer@index');
-Route::get('customer/create', 'master\controller_customer@create');
-Route::get('customer/edit', 'master\controller_customer@edit');
-Route::get('customer/destroy', 'master\controller_customer@destroy');
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('customerindex', 'master\controller_customer@index');
+Route::get('customercreate', 'master\controller_customer@create');
+Route::post('customerstore', 'master\controller_customer@store');
+Route::get('customeredit{id}', 'master\controller_customer@edit');
+Route::post('customerupdate', 'master\controller_customer@update');
+Route::get('customerdestroy/{id}', 'master\controller_customer@destroy');
 
 Route::get('product/index', 'master\controller_product@index');
 Route::get('product/create', 'master\controller_product@create');

@@ -27,7 +27,11 @@ class controller_customer extends Controller
      */
     public function create()
     {
-        return "Ini Halaman Create";
+        
+        //$customer = DB::table('customer')->get();
+        //dump($customer);
+        //return view ('master/customer/create',['customer' =>$customer]);
+        return view('master/customer/create');
     }
 
     /**
@@ -38,7 +42,19 @@ class controller_customer extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        DB::table('customer')->insert([
+       'first_name'   => $request->firstname,
+       'last_name'    => $request->lastname,
+       'phone'        => $request->phone,
+       'email'        => $request->email,
+       'street'       => $request->street,
+       'city'         => $request->city,
+       'state'        => $request->state,
+       'zip_code'     => $request->zipcode
+        ]);
+
+        return redirect('customerindex');
     }
 
     /**
@@ -47,9 +63,10 @@ class controller_customer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(customer\create $customer)
     {
-        //
+        $customer = DB::table('customer')->get();
+        return view('master.customer.show', compact('$customer'));
     }
 
     /**
@@ -58,9 +75,12 @@ class controller_customer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return "Ini Halaman Edit";
+        // mengambil data customer berdasarkan id yang dipilih
+		$customer = DB::table('customer')->where('customer_id',$id)->get();
+		// passing data customer yang didapat ke view edit.blade.php
+		return view('master.customer.edit',['customer' => $customer]);
     }
 
     /**
@@ -70,9 +90,21 @@ class controller_customer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    
+    public function update(Request $request)
     {
-        //
+        DB::table('customer')->where('customer_id',$request->id)->update([
+			'first_name'   => $request->firstname,
+            'last_name'    => $request->lastname,
+            'phone'        => $request->phone,
+            'email'        => $request->email,
+            'street'       => $request->street,
+            'city'         => $request->city,
+            'state'        => $request->state,
+            'zip_code'     => $request->zipcode
+		]);
+		// alihkan halaman ke halaman customer
+		return redirect('customerindex');
     }
 
     /**
@@ -81,8 +113,12 @@ class controller_customer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-        return "Ini Halaman Destroy";
+        // menghapus data customer berdasarkan id yang dipilih
+		DB::table('customer')->where('customer_id',$id)->delete();
+		
+		// alihkan halaman ke halaman customer
+		return redirect('customercreate');
     }
 }
