@@ -119,6 +119,6 @@ class controller_customer extends Controller
 		DB::table('customer')->where('customer_id',$id)->delete();
 		
 		// alihkan halaman ke halaman customer
-		return redirect('customercreate');
+		return redirect('customerindex');
     }
 }

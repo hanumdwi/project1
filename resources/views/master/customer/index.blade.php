@@ -48,7 +48,7 @@
                                                     <td>{{ $cus -> zip_code }}</td>
                                                     
                                                     <td><a href="customeredit{{$cus -> customer_id}}" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
-                                                    <a href="customerdestroy" class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_3');"><span class="fa fa-times"></span>
+                                                    <a href="customerdestroy{{$cus -> customer_id}}" class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_3');"><span class="fa fa-times"></span>
                                                     </td>
                                                 </tr>
                                                 @endforeach

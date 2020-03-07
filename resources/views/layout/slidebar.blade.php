@@ -36,7 +36,7 @@
                                     <li><a href="customercreate"><span class="fa fa-align-justify"></span>Customer</a></li>
                                     <li><a href="categoriescreate"><span class="fa fa-align-justify"></span> Categories</a></li>
                                     <li><a href="usercreate"><span class="fa fa-align-justify"></span>User</a></li>
-                                    <li><a href="produkcreate"><span class="fa fa-align-justify"></span>Produk</a></li>
+                                    <li><a href="productcreate"><span class="fa fa-align-justify"></span>Produk</a></li>
                                 </ul>
                             </li>
                             <li class="xn-openable">
@@ -56,16 +56,16 @@
                                 <a href="#"><span class="fa fa-files-o"></span> Master</a>
                                 <ul>
                                     <li><a href="customerindex"><span class="fa fa-align-justify"></span>Customer</a></li>
-                                    <li><a href="categoriescreate"><span class="fa fa-align-justify"></span> Categories</a></li>
-                                    <li><a href="usercreate"><span class="fa fa-align-justify"></span>User</a></li>
-                                    <li><a href="produkcreate"><span class="fa fa-align-justify"></span>Produk</a></li>
+                                    <li><a href="categoriesindex"><span class="fa fa-align-justify"></span> Categories</a></li>
+                                    <li><a href="userindex"><span class="fa fa-align-justify"></span>User</a></li>
+                                    <li><a href="productindex"><span class="fa fa-align-justify"></span>Produk</a></li>
                                 </ul>
                             </li>
                             <li class="xn-openable">
                                 <a href="#"><span class="fa fa-files-o"></span>Transaksi</a>
                                 <ul>
-                                    <li><a href="salescreate"><span class="fa fa-align-justify"></span>Sales</a></li>
-                                    <li><a href="detilsalescreate"><span class="fa fa-align-justify"></span>Detil Sales</a></li>
+                                    <li><a href="salesindex"><span class="fa fa-align-justify"></span>Sales</a></li>
+                                    <li><a href="detilsalesindex"><span class="fa fa-align-justify"></span>Detil Sales</a></li>
                                 </ul>
                             </li>                                                  
                         </ul>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\master;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class controller_product extends Controller
 {
@@ -14,7 +15,9 @@ class controller_product extends Controller
      */
     public function index()
     {
-        return "Ini Halaman Index";
+        $product = DB::table('product')->get();
+        //dump($product);
+        return view ('master/product/index',['product' =>$product]);
     }
 
     /**
@@ -24,7 +27,7 @@ class controller_product extends Controller
      */
     public function create()
     {
-        return "Ini Halaman Create";
+        return view('master/product/create');
     }
 
     /**
@@ -35,7 +38,14 @@ class controller_product extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('product')->insert([
+            'category_id'       => $request->category_id,
+            'product_price'     => $request->product_price,
+            'product_stock'     => $request->product_stock,
+            'explanation'       => $request->explanation
+             ]);
+     
+             return redirect('productindex');
     }
 
     /**
@@ -55,9 +65,11 @@ class controller_product extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return "Ini Halaman Edit";
+        $product = DB::table('product')->where('product_id',$id)->get();
+		// passing data product yang didapat ke view edit.blade.php
+		return view('master.product.edit',['product' => $product]);
     }
 
     /**
@@ -67,9 +79,16 @@ class controller_product extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('product')->where('product_id',$request->id)->update([
+            'category_id'       => $request->category_id,
+            'product_price'     => $request->product_price,
+            'product_stock'     => $request->product_stock,
+            'explanation'       => $request->explanation
+        ]);
+     
+             return redirect('productindex');
     }
 
     /**
@@ -78,8 +97,11 @@ class controller_product extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-        return "Ini Halaman Destroy";
+        DB::table('product')->where('product_id',$id)->delete();
+		
+		// alihkan halaman ke halaman product
+		return redirect('productindex');
     }
 }

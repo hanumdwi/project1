@@ -4,6 +4,7 @@ namespace App\Http\Controllers\master;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class controller_user extends Controller
 {
@@ -14,7 +15,9 @@ class controller_user extends Controller
      */
     public function index()
     {
-        return "Ini Halaman Index";
+        $user = DB::table('user')->get();
+        //dump($user);
+        return view ('master/user/index',['user' =>$user]);
     }
 
     /**
@@ -24,7 +27,7 @@ class controller_user extends Controller
      */
     public function create()
     {
-        return "Ini Halaman Create";
+        return view('master/user/create');
     }
 
     /**
@@ -35,7 +38,16 @@ class controller_user extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('user')->insert([
+            'first_name'   => $request->firstname,
+            'last_name'    => $request->lastname,
+            'phone'        => $request->phone,
+            'email'        => $request->email,
+            'password'     => $request->password,
+            'job_status'   => $request->jobstatus
+             ]);
+     
+             return redirect('userindex');
     }
 
     /**
@@ -55,9 +67,11 @@ class controller_user extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return "Ini Halaman Edit";
+        $user = DB::table('user')->where('user_id',$id)->get();
+		// passing data user yang didapat ke view edit.blade.php
+		return view('master.user.edit',['user' => $user]);
     }
 
     /**
@@ -67,9 +81,18 @@ class controller_user extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('user')->where('user_id',$request->id)->update([
+            'first_name'   => $request->firstname,
+            'last_name'    => $request->lastname,
+            'phone'        => $request->phone,
+            'email'        => $request->email,
+            'password'     => $request->password,
+            'job_status'   => $request->jobstatus
+        ]);
+     
+             return redirect('userindex');
     }
 
     /**
@@ -78,8 +101,11 @@ class controller_user extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-        return "Ini Halaman Destroy";
+        DB::table('user')->where('user_id',$id)->delete();
+		
+		// alihkan halaman ke halaman user
+		return redirect('userindex');
     }
 }

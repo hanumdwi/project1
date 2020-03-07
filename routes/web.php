@@ -81,22 +81,28 @@ Route::get('customercreate', 'master\controller_customer@create');
 Route::post('customerstore', 'master\controller_customer@store');
 Route::get('customeredit{id}', 'master\controller_customer@edit');
 Route::post('customerupdate', 'master\controller_customer@update');
-Route::get('customerdestroy/{id}', 'master\controller_customer@destroy');
+Route::get('customerdestroy{id}', 'master\controller_customer@destroy');
 
-Route::get('product/index', 'master\controller_product@index');
-Route::get('product/create', 'master\controller_product@create');
-Route::get('product/edit', 'master\controller_product@edit');
-Route::get('product/destroy', 'master\controller_product@destroy');
+Route::get('productindex', 'master\controller_product@index');
+Route::get('productcreate', 'master\controller_product@create');
+Route::post('productstore', 'master\controller_product@store');
+Route::get('productedit{id}', 'master\controller_product@edit');
+Route::post('productupdate', 'master\controller_product@update');
+Route::get('productdestroy{id}', 'master\controller_product@destroy');
 
-Route::get('categories/index', 'master\controller_categories@index');
-Route::get('categories/create', 'master\controller_categories@create');
-Route::get('categories/edit', 'master\controller_categories@edit');
-Route::get('categories/destroy', 'master\controller_categories@destroy');
+Route::get('categoriesindex', 'master\controller_categories@index');
+Route::get('categoriescreate', 'master\controller_categories@create');
+Route::post('categoriesstore', 'master\controller_categories@store');
+Route::get('categoriesedit{id}', 'master\controller_categories@edit');
+Route::post('categoriesupdate', 'master\controller_categories@update');
+Route::get('categoriesdestroy{id}', 'master\controller_categories@destroy');
 
-Route::get('user/index', 'master\controller_user@index');
-Route::get('user/create', 'master\controller_user@create');
-Route::get('user/edit', 'master\controller_user@edit');
-Route::get('user/destroy', 'master\controller_user@destroy');
+Route::get('userindex', 'master\controller_user@index');
+Route::get('usercreate', 'master\controller_user@create');
+Route::post('userstore', 'master\controller_user@store');
+Route::get('useredit{id}', 'master\controller_user@edit');
+Route::post('userupdate', 'master\controller_user@update');
+Route::get('userdestroy{id}', 'master\controller_user@destroy');
 
 
 Route::get('sales/index', 'transaksi\controller_sales@index');
