@@ -14,7 +14,7 @@ class controller_detail_sales extends Controller
      */
     public function index()
     {
-        return "Ini Halaman Index";
+        return view('transaksi/detail_sales/index');
     }
 
     /**

@@ -110,7 +110,7 @@ Route::get('sales/create', 'transaksi\controller_sales@create');
 Route::get('sales/edit', 'transaksi\controller_sales@edit');
 Route::get('sales/destroy', 'transaksi\controller_sales@destroy');
 
-Route::get('detail_sales/index', 'transaksi\controller_detail_sales@index');
+Route::get('detail_salesindex', 'transaksi\controller_detail_sales@index');
 Route::get('detail_salescreate', 'transaksi\controller_detail_sales@create');
 Route::get('detail_sales/edit', 'transaksi\controller_detail_sales@edit');
 Route::get('detail_sales/destroy', 'transaksi\controller_detail_sales@destroy');

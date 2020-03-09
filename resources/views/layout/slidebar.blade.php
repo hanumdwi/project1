@@ -65,7 +65,7 @@
                                 <a href="#"><span class="fa fa-files-o"></span>Transaksi</a>
                                 <ul>
                                     <li><a href="salesindex"><span class="fa fa-align-justify"></span>Sales</a></li>
-                                    <li><a href="detilsalesindex"><span class="fa fa-align-justify"></span>Detil Sales</a></li>
+                                    <li><a href="detil_salesindex"><span class="fa fa-align-justify"></span>Detil Sales</a></li>
                                 </ul>
                             </li>                                                  
                         </ul>

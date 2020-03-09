@@ -1,374 +1,240 @@
 @extends('layout/main')
 
 @section('container')
+
 <!DOCTYPE html>
-<html lang="zxx">
-<head>
-	<title>Divisima | eCommerce Template</title>
-	<meta charset="UTF-8">
-	<meta name="description" content=" Divisima | eCommerce Template">
-	<meta name="keywords" content="divisima, eCommerce, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->
-	<link href="asset/kasir/img/favicon.ico" rel="shortcut icon"/>
+<html lang="en">
+  <head>
+    <title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="asset/vegfoods/https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="asset/vegfoods/https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="asset/vegfoods/https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="asset/vegfoods/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="asset/vegfoods/css/animate.css">
+    
+    <link rel="stylesheet" href="asset/vegfoods/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="asset/vegfoods/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="asset/vegfoods/css/magnific-popup.css">
 
+    <link rel="stylesheet" href="asset/vegfoods/css/aos.css">
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="asset/kasir/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="asset/kasir/css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="asset/kasir/css/flaticon.css"/>
-	<link rel="stylesheet" href="asset/kasir/css/slicknav.min.css"/>
-	<link rel="stylesheet" href="asset/kasir/css/jquery-ui.min.css"/>
-	<link rel="stylesheet" href="asset/kasir/css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="asset/kasir/css/animate.css"/>
-	<link rel="stylesheet" href="asset/kasir/css/style.css"/>
+    <link rel="stylesheet" href="asset/vegfoods/css/ionicons.min.css">
 
+    <link rel="stylesheet" href="asset/vegfoods/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="asset/vegfoods/css/jquery.timepicker.css">
 
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
-</head>
-<body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
-
-                        <!-- Header section -->
-                    <header class="header-section">
-                        <div class="header-top">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-2 text-center text-lg-left">
-                                        <!-- logo -->
-                                        <a href="./index.html" class="site-logo">
-                                            <img src="img/logo.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-5">
-                                        <form class="header-search-form">
-                                            <input type="text" placeholder="Search on divisima ....">
-                                            <button><i class="flaticon-search"></i></button>
-                                        </form>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-5">
-                                        <div class="user-panel">
-                                            <div class="up-item">
-                                                <i class="flaticon-profile"></i>
-                                                <a href="#">Sign</a> In or <a href="#">Create Account</a>
-                                            </div>
-                                            <div class="up-item">
-                                                <div class="shopping-card">
-                                                    <i class="flaticon-bag"></i>
-                                                    <span>0</span>
+    
+    <link rel="stylesheet" href="asset/vegfoods/css/flaticon.css">
+    <link rel="stylesheet" href="asset/vegfoods/css/icomoon.css">
+    <link rel="stylesheet" href="asset/vegfoods/css/style.css">
+  </head>
+  <body>
+    <section class="ftco-section ftco-cart">
+			<div class="container">
+				<div class="row">
+    			<div class="col-md-12 ftco-animate">
+    				<div class="cart-list">
+	    				<table class="table">
+						    <thead class="thead-dark">
+						      <tr class="text-center">
+						        <th>&nbsp;</th>
+						        <th>&nbsp;</th>
+						        <th>Product name</th>
+						        <th>Price (Rp)</th>
+						        <th>Quantity</th>
+						        <th>Total</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr class="text-center">
+						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+						        
+						        <td class="image-prod"><div class="img" style="background-image:url(asset/vegfoods/images/product-3.jpg);"></div></td>
+						        
+						        <td class="product-name">
+						        	<h3>Bell Pepper</h3>
+						        	<p>Far far away, behind the word mountains, far from the countries</p>
+						        </td>
+						        
+						        <td class="price">40.900</td>
+						        
+								<td class="qty">
+                                            <div class="qty-btn d-flex">
+                                                
+                                                <div class="quantity">
+                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
+                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                                 </div>
-                                                <a href="#">Shopping Cart</a>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </td>
+						        
+						        <td class="total">40.900</td>
+						      </tr><!-- END TR-->
+
+						      <tr class="text-center">
+						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+						        
+						        <td class="image-prod"><div class="img" style="background-image:url(asset/vegfoods/images/product-4.jpg);"></div></td>
+						        
+						        <td class="product-name">
+						        	<h3>Bell Pepper</h3>
+						        	<p>Far far away, behind the word mountains, far from the countries</p>
+						        </td>
+						        
+						        <td class="price">15.000</td>
+						        
+						        <td class="qty">
+                                            <div class="qty-btn d-flex">
+                                                
+                                                <div class="quantity">
+                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
+                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                        </td>
+						        
+						        <td class="total">15.000</td>
+						      </tr><!-- END TR-->
+						    </tbody>
+						  </table>
+					  </div>
+    			</div>
+    		</div>
+    		<div class="row justify-content-end">
+    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+    				<div class="cart-total mb-3">
+    					<h3>Coupon Code</h3>
+    					<p>Enter your coupon code if you have one</p>
+  						<form action="#" class="info">
+	              <div class="form-group">
+	              	<label for="">Coupon code</label>
+	                <input type="text" class="form-control text-left px-3" placeholder="">
+	              </div>
+	            </form>
+    				</div>
+    				<p><a href="asset/vegfoods/checkout.html" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
+    			</div>
+    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+    				<div class="payment-method">
+                                <!-- Cash on delivery -->
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="cod" checked>
+                                    <label class="custom-control-label" for="cod">Cash</label>
+                                </div>
+                                <!-- Paypal -->
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="paypal">
+                                    <label class="custom-control-label" for="paypal">Paypal<img class="ml-15" src="asset/amado/img/core-img/paypal.png" alt=""></label>
                                 </div>
                             </div>
-                        </div>
-
-		<nav class="main-navbar">
-			<div class="container">
-				
-
-
-	<!-- cart section end -->
-	<section class="cart-section spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="cart-table">
-						<h3>Your Cart</h3>
-						<div class="cart-table-warp">
-							<table>
-							<thead>
-								<tr>
-									<th class="product-th">Product</th>
-                                    <th class="quy-th">Quantity</th>
-									<th class="total-th">Price</th>
-                                    <th class="size-th">Sub Total</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="product-col">
-										<img src="asset/kasir/img/cart/susu.jpg" alt="">
-										<div class="pc-title">
-											<h4>Susu Fresh Milk</h4>
-											
-                                            <button type="button" class="btn btn-danger">Delete</button>
-										</div>
-									</td>
-									<td class="quy-col">
-										<div class="quantity">
-					                        <div class="pro-qty">
-												<input type="text" value="1">
-											</div>
-                    					</div>
-									</td>
-									<td class="size-col"><h4>Rp. 30.000</h4></td>
-									<td class="total-col"><h4>Rp. 60.000</h4></td>
-                                    
-								</tr>
-								<tr>
-									<td class="product-col">
-										<img src="asset/kasir/img/cart/piattos.jpg" alt="">
-										<div class="pc-title">
-											<h4>Piattos Sapi Panggang</h4>
-											
-                                            <button type="button" class="btn btn-danger">Delete</button>
-										</div>
-									</td>
-									<td class="quy-col">
-										<div class="quantity">
-					                        <div class="pro-qty">
-												<input type="text" value="1">
-											</div>
-                    					</div>
-									</td>
-									<td class="size-col"><h4>Rp. 5.500</h4></td>
-									<td class="total-col"><h4>Rp. 5.500</h4></td>
-								</tr>
-								<tr>
-									<td class="product-col">
-										<img src="asset/kasir/img/cart/nutella.jpg" alt="">
-										<div class="pc-title">
-											<h4>Selai Nutella</h4>
-											
-                                            <button type="button" class="btn btn-danger">Delete</button>
-										</div>
-									</td>
-									<td class="quy-col">
-										<div class="quantity">
-					                        <div class="pro-qty">
-												<input type="text" value="1">
-											</div>
-                    					</div>
-									</td>
-									<td class="size-col"><h4>Rp. 75.500</h4></td>
-									<td class="total-col"><h4>Rp. 226.500</h4></td>
-								</tr>
-							</tbody>
-						</table>
-						</div>
-						<div class="total-cost">
-                            <h6>Sub Total <span>Rp. 186.500</span></h6>
-                            <p><h6>PPN   <span>10%</span></h6></p>
-							<h6>Total <span>Rp. 186.500</span></h6>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 card-right">
-					<form class="promo-code-form">
-						<input type="text" placeholder="Enter promo code">
-						<button>Submit</button>
-					</form>
-					<a href="asset/kasir" class="site-btn">Proceed to checkout</a>
-					<a href="asset/kasir" class="site-btn sb-dark">Continue shopping</a>
-				</div>
+    
+    			</div>
+    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+    				<div class="cart-total mb-3">
+    					<h3>Cart Totals</h3>
+    					<p class="d-flex">
+    						<span>Subtotal</span>
+    						<span>20.600</span>
+    					</p>
+    					<p class="d-flex">
+    						<span>PPN</span>
+    						<span>10%</span>
+    					</p>
+    					<p class="d-flex">
+    						<span>Discount</span>
+    						<span>3.000</span>
+    					</p>
+    					<hr>
+    					<p class="d-flex total-price">
+    						<span>Total</span>
+    						<span>170.600</span>
+    					</p>
+    				</div>
+    				<p><a href="asset/vegfoods/checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    			</div>
+    		</div>
 			</div>
-		</div>
-	</section>
-	<!-- cart section end -->
+		</section>
 
-	<!-- Related product section -->
-	<section class="related-product-section">
-		<div class="container">
-			<div class="section-title text-uppercase">
-				<h2>Continue Shopping</h2>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-sm-6">
-					<div class="product-item">
-						<div class="pi-pic">
-							<div class="tag-new">New</div>
-							<img src="asset/kasir/./img/product/2.jpg" alt="">
-							<div class="pi-links">
-								<a href="asset/kasir/#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-								<a href="asset/kasir/#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
-						</div>
-						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Black and White Stripes Dress</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="product-item">
-						<div class="pi-pic">
-							<img src="asset/kasir/./img/product/5.jpg" alt="">
-							<div class="pi-links">
-								<a href="asset/kasir/#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-								<a href="asset/kasir/#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
-						</div>
-						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Flamboyant Pink Top </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="product-item">
-						<div class="pi-pic">
-							<img src="asset/kasir/./img/product/9.jpg" alt="">
-							<div class="pi-links">
-								<a href="asset/kasir/#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-								<a href="asset/kasir/#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
-						</div>
-						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Flamboyant Pink Top </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="product-item">
-						<div class="pi-pic">
-							<img src="./img/product/1.jpg" alt="">
-							<div class="pi-links">
-								<a href="asset/kasir/#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-								<a href="asset/kasir/#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
-						</div>
-						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Flamboyant Pink Top </p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Related product section end -->
+		
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
+  <script src="asset/vegfoods/js/jquery.min.js"></script>
+  <script src="asset/vegfoods/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="asset/vegfoods/js/popper.min.js"></script>
+  <script src="asset/vegfoods/js/bootstrap.min.js"></script>
+  <script src="asset/vegfoods/js/jquery.easing.1.3.js"></script>
+  <script src="asset/vegfoods/js/jquery.waypoints.min.js"></script>
+  <script src="asset/vegfoods/js/jquery.stellar.min.js"></script>
+  <script src="asset/vegfoods/js/owl.carousel.min.js"></script>
+  <script src="asset/vegfoods/js/jquery.magnific-popup.min.js"></script>
+  <script src="asset/vegfoods/js/aos.js"></script>
+  <script src="asset/vegfoods/js/jquery.animateNumber.min.js"></script>
+  <script src="asset/vegfoods/js/bootstrap-datepicker.js"></script>
+  <script src="asset/vegfoods/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="asset/vegfoods/js/google-map.js"></script>
+  <script src="asset/vegfoods/js/main.js"></script>
 
-	<!-- Footer section -->
-	<section class="footer-section">
-		<div class="container">
-			<div class="footer-logo text-center">
-				<a href="index.html"><img src="asset/kasir/./img/logo-light.png" alt=""></a>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-sm-6">
-					<div class="footer-widget about-widget">
-						<h2>About</h2>
-						<p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
-						<img src="asset/kasir/img/cards.png" alt="">
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="footer-widget about-widget">
-						<h2>Questions</h2>
-						<ul>
-							<li><a href="asset/kasir">About Us</a></li>
-							<li><a href="asset/kasir">Track Orders</a></li>
-							<li><a href="asset/kasir">Returns</a></li>
-							<li><a href="asset/kasir">Jobs</a></li>
-							<li><a href="asset/kasir">Shipping</a></li>
-							<li><a href="asset/kasir">Blog</a></li>
-						</ul>
-						<ul>
-							<li><a href="asset/kasir">Partners</a></li>
-							<li><a href="asset/kasir">Bloggers</a></li>
-							<li><a href="asset/kasir">Support</a></li>
-							<li><a href="asset/kasir">Terms of Use</a></li>
-							<li><a href="asset/kasir">Press</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="footer-widget about-widget">
-						<h2>Questions</h2>
-						<div class="fw-latest-post-widget">
-							<div class="lp-item">
-								<div class="lp-thumb set-bg" data-setbg="img/blog-thumbs/1.jpg"></div>
-								<div class="lp-content">
-									<h6>what shoes to wear</h6>
-									<span>Oct 21, 2018</span>
-									<a href="#" class="readmore">Read More</a>
-								</div>
-							</div>
-							<div class="lp-item">
-								<div class="lp-thumb set-bg" data-setbg="img/blog-thumbs/2.jpg"></div>
-								<div class="lp-content">
-									<h6>trends this year</h6>
-									<span>Oct 21, 2018</span>
-									<a href="#" class="readmore">Read More</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="footer-widget contact-widget">
-						<h2>Questions</h2>
-						<div class="con-info">
-							<span>C.</span>
-							<p>Your Company Ltd </p>
-						</div>
-						<div class="con-info">
-							<span>B.</span>
-							<p>1481 Creekside Lane  Avila Beach, CA 93424, P.O. BOX 68 </p>
-						</div>
-						<div class="con-info">
-							<span>T.</span>
-							<p>+53 345 7953 32453</p>
-						</div>
-						<div class="con-info">
-							<span>E.</span>
-							<p>office@youremail.com</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="social-links-warp">
-			<div class="container">
-				<div class="social-links">
-					<a href="asset/kasir" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
-					<a href="asset/kasir" class="google-plus"><i class="fa fa-google-plus"></i><span>g+plus</span></a>
-					<a href="asset/kasir" class="pinterest"><i class="fa fa-pinterest"></i><span>pinterest</span></a>
-					<a href="asset/kasir" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
-					<a href="asset/kasir" class="twitter"><i class="fa fa-twitter"></i><span>twitter</span></a>
-					<a href="asset/kasir" class="youtube"><i class="fa fa-youtube"></i><span>youtube</span></a>
-					<a href="asset/kasir" class="tumblr"><i class="fa fa-tumblr-square"></i><span>tumblr</span></a>
-				</div>
+  <script>
+		$(document).ready(function(){
 
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> 
-<p class="text-white text-center mt-5">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		var quantitiy=0;
+		   $('.quantity-right-plus').click(function(e){
+		        
+		        // Stop acting like a button
+		        e.preventDefault();
+		        // Get the field name
+		        var quantity = parseInt($('#quantity').val());
+		        
+		        // If is not undefined
+		            
+		            $('#quantity').val(quantity + 1);
 
-			</div>
-		</div>
-	</section>
-	<!-- Footer section end -->
+		          
+		            // Increment
+		        
+		    });
 
+		     $('.quantity-left-minus').click(function(e){
+		        // Stop acting like a button
+		        e.preventDefault();
+		        // Get the field name
+		        var quantity = parseInt($('#quantity').val());
+		        
+		        // If is not undefined
+		      
+		            // Increment
+		            if(quantity>0){
+		            $('#quantity').val(quantity - 1);
+		            }
+		    });
+		    
+		});
+	</script>
 
-
-	<!--====== Javascripts & Jquery ======-->
-	<script src="asset/kasir/js/jquery-3.2.1.min.js"></script>
-	<script src="asset/kasir/js/bootstrap.min.js"></script>
-	<script src="asset/kasir/js/jquery.slicknav.min.js"></script>
-	<script src="asset/kasir/js/owl.carousel.min.js"></script>
-	<script src="asset/kasir/js/jquery.nicescroll.min.js"></script>
-	<script src="asset/kasir/js/jquery.zoom.min.js"></script>
-	<script src="asset/kasir/js/jquery-ui.min.js"></script>
-	<script src="asset/kasir/js/main.js"></script>
-
-	</body>
+  </body>
 </html>
-
-
 @endsection
