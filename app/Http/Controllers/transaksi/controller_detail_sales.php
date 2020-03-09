@@ -24,7 +24,7 @@ class controller_detail_sales extends Controller
      */
     public function create()
     {
-        return "Ini Halaman Create";
+        return view('transaksi/detail_sales/create');
     }
 
     /**

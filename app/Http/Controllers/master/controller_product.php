@@ -83,6 +83,7 @@ class controller_product extends Controller
     {
         DB::table('product')->where('product_id',$request->id)->update([
             'category_id'       => $request->category_id,
+            'product_name'     => $request->product_name,
             'product_price'     => $request->product_price,
             'product_stock'     => $request->product_stock,
             'explanation'       => $request->explanation

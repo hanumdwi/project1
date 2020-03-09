@@ -43,7 +43,7 @@
                                 <a href="#"><span class="fa fa-files-o"></span>Transaksi</a>
                                 <ul>
                                     <li><a href="salescreate"><span class="fa fa-align-justify"></span>Sales</a></li>
-                                    <li><a href="detilsalescreate"><span class="fa fa-align-justify"></span>Detil Sales</a></li>
+                                    <li><a href="detail_salescreate"><span class="fa fa-align-justify"></span>Detil Sales</a></li>
                                 </ul>
                             </li>                                                  
                         </ul>
