@@ -33,6 +33,44 @@
     <link rel="stylesheet" href="asset/vegfoods/css/style.css">
   </head>
   <body>
+
+  <div class="x_content">
+                    <form class="form-horizontal form-label-left" action="#" method="POST">
+
+                      <div class="item form-group ">
+                        <label class="control-label col-md-2 col-sm-1 col-xs-1" for="categoriesid"> Categories Id <span class="required">*</span>
+                        </label>
+                        <div class="col-md-5 col-sm-5 col-xs-5">
+                          <input id="categoriesid" class="form-control col-md-5 col-xs-5" data-validate-length-range="6" 
+                          data-validate-words="2" name="categoriesid" readonly required="required" 
+                          type="text">
+                        </div>
+					   </div>
+					   
+						<div class="item form-group ">
+                        <label class="control-label col-md-2 col-sm-1 col-xs-1" for="categoriesname"> Categories Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-5 col-sm-5 col-xs-5">
+						<select class="form-control select">
+                                                <option>Categories Name 1</option>
+                                                <option>Categories Name 2</option>
+                                                <option>Categories Name 3</option>
+                                                <option>Categories Name 4</option>
+                                                <option>Categories Name 5</option>
+                                            </select>
+                        </div>
+                      </div>  
+
+					  <div class="item form-group ">
+                        <label class="control-label col-md-2 col-sm-1 col-xs-1" for="categoriesname"> Product Name <span class="required">*</span>
+                        </label>
+						<div class="col-md-5 col-sm-5 col-xs-5">
+                          <input id="categoriesid" class="form-control col-md-5 col-xs-5" data-validate-length-range="6" 
+                          data-validate-words="2" name="categoriesid"
+                          type="text">
+                    </form>
+                  </div>
+
     <section class="ftco-section ftco-cart">
 			<div class="container">
 				<div class="row">
@@ -42,10 +80,10 @@
 						    <thead class="thead-dark">
 						      <tr class="text-center">
 						        <th>&nbsp;</th>
-						        <th>&nbsp;</th>
+						       
 						        <th>Product name</th>
 						        <th>Price (Rp)</th>
-						        <th>Quantity</th>
+						        <th width="20px">Quantity</th>
 						        <th>Total</th>
 						      </tr>
 						    </thead>
@@ -53,8 +91,7 @@
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
 						        
-						        <td class="image-prod"><div class="img" style="background-image:url(asset/vegfoods/images/product-3.jpg);"></div></td>
-						        
+						     
 						        <td class="product-name">
 						        	<h3>Bell Pepper</h3>
 						        	<p>Far far away, behind the word mountains, far from the countries</p>
@@ -78,16 +115,14 @@
 
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(asset/vegfoods/images/product-4.jpg);"></div></td>
-						        
+						        						        
 						        <td class="product-name">
-						        	<h3>Bell Pepper</h3>
+						        	<h3>Bayam</h3>
 						        	<p>Far far away, behind the word mountains, far from the countries</p>
 						        </td>
 						        
 						        <td class="price">15.000</td>
-						        
+						    
 						        <td class="qty">
                                             <div class="qty-btn d-flex">
                                                 
@@ -96,6 +131,7 @@
                                                     <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
                                                     <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                                 </div>
+												
                                             </div>
                                         </td>
 						        
@@ -124,12 +160,12 @@
     				<div class="payment-method">
                                 <!-- Cash on delivery -->
                                 <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="cod" checked>
+                                    <input type="radio" name="pilihan" class="custom-control-input" id="cod" checked>
                                     <label class="custom-control-label" for="cod">Cash</label>
                                 </div>
                                 <!-- Paypal -->
                                 <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="paypal">
+                                    <input type="radio" name="pilihan" class="custom-control-input" id="paypal">
                                     <label class="custom-control-label" for="paypal">Paypal<img class="ml-15" src="asset/amado/img/core-img/paypal.png" alt=""></label>
                                 </div>
                             </div>

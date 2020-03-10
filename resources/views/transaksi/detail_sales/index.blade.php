@@ -90,6 +90,7 @@
 								<tr>
 									<th class="product-th">Product</th>
                                     <th class="quy-th">Quantity</th>
+                                    <th>Quantity</th>
 									<th class="total-th">Price</th>
                                     <th class="size-th">Sub Total</th>
 								</tr>

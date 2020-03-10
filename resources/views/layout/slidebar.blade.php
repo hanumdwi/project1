@@ -70,6 +70,9 @@
                             </li>                                                  
                         </ul>
                     </li>
+
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-tasks"></span> <span class="xn-text">Point Of Sales</span></a></li>
                     <!--
                     <li class="xn-title">Components</li>
                     <li class="xn-openable">
