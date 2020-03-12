@@ -1,33 +1,46 @@
 @extends('layout/main')
 
-@section('title', 'Customer')
-
 @section('container')
 
-<section class="content">
-        <div class="container-fluid">
-            <div class="block-header">
-                <h2>Detail Customer</h2>
-            </div>
-            
-            <div class="card">
-            <div class="card-body">
-            <h5 class="card-title">{{ $cus -> customer_id }}</h5>
-            <h5 class="card-title">{{ $cus -> first_name }}</h5>
-            <h5 class="card-title">{{ $cus -> last_name }}</h5>
-            <h5 class="card-title">{{ $cus -> phone }}</h5>
-            <h5 class="card-title">{{ $cus -> email }}</h5>
-            <h5 class="card-title">{{ $cus -> street }}</h5>
-            <h5 class="card-title">{{ $cus -> city }}</h5>
-            <h5 class="card-title">{{ $cus -> state }}</h5>
-            <h5 class="card-title">{{ $cus -> zip_code }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-</section>
+<div class="panel panel-default">
+                                <div class="panel-heading">                                
+                                    <h3 class="panel-title">Default</h3>
+                                    <ul class="panel-controls">
+                                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                    </ul>                                
+                                </div>
+								<li class="xn-search">
+                        <form role="form">
+                            <input type="text" name="search" placeholder="Search..."/>
+                        </form>
+                    </li>  
+                                <div class="panel-body">
+                                    <table class="table datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th>Age</th>
+                                                <th>Start date</th>
+                                                <th>Salary</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Tiger Nixon</td>
+                                                <td>System Architect</td>
+                                                <td>Edinburgh</td>
+                                                <td>61</td>
+                                                <td>2011/04/25</td>
+                                                <td>$320,800</td>
+                                            </tr>
+
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
 @endsection

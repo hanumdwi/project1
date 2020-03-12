@@ -23,11 +23,17 @@
                                         <div class="col-md-6">
                                             
                                         <div class="form-group">
-                                                <label class="col-md-3 control-label">Category Id</label>
+                                                <label for="category_id" class="col-md-3 control-label">Category Id</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="text" class="form-control" id="category_id" name="category_id" />
+                                                        <!-- <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                        <input type="text" class="form-control" id="category_id" name="category_id" /> -->
+                                                        <select class="form-control" id="category_id" required="" name="category_id">
+                                                        <option disabled selected="">Pilih Kategori</option>
+                                                        @foreach($categories as $c)
+                                                        <option value="{{ $c->category_id }}">{{$c->category_name}}</option>
+                                                        @endforeach
+                                                        </select>
                                                     </div>                                            
                                                     <span class="help-block">This is sample of text field</span>
                                                 </div>

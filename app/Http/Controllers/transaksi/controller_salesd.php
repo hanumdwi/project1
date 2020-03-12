@@ -5,7 +5,7 @@ namespace App\Http\Controllers\transaksi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class controller_detail_sales extends Controller
+class controller_salesd extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class controller_detail_sales extends Controller
      */
     public function index()
     {
-        return view('transaksi/detail_sales/index');
+        return view('transaksi/salesd/index');
     }
 
     /**
@@ -24,7 +24,7 @@ class controller_detail_sales extends Controller
      */
     public function create()
     {
-        return view('transaksi/detail_sales/create');
+        return view('transaksi/salesd/create');
     }
 
     /**

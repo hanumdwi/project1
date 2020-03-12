@@ -16,7 +16,10 @@ class controller_product extends Controller
     public function index()
     {
         $product = DB::table('product')->get();
+        
+       // dump($categories);
         //dump($product);
+
         return view ('master/product/index',['product' =>$product]);
     }
 
@@ -27,7 +30,8 @@ class controller_product extends Controller
      */
     public function create()
     {
-        return view('master/product/create');
+        $categories = DB::table('categories')->get();
+        return view('master/product/create',['categories' =>$categories]);
     }
 
     /**

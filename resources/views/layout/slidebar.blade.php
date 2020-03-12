@@ -25,13 +25,15 @@
                     <li class="xn-title">Navigation</li>
                     <li class="active">
                         <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
-                    </li> 
+                    </li>                    
+                    <li class="xn-openable">
+                        <a href="salesdcreate"><span class="glyphicon glyphicon-tags"></span> <span class="xn-text">Point of Sales</span></a>
 
                     <li class="xn-openable">
-                        <a href="#"><span class="fa fa-pencil"></span> <span class="xn-text">Forms</span></a>
+                        <a href=""><span class="fa fa-pencil"></span> <span class="xn-text">Forms</span></a>
                         <ul>
                             <li class="xn-openable">
-                                <a href="#"><span class="fa fa-files-o"></span> Master</a>
+                                <a href=""><span class="fa fa-files-o"></span> Master</a>
                                 <ul>
                                     <li><a href="customercreate"><span class="fa fa-align-justify"></span>Customer</a></li>
                                     <li><a href="categoriescreate"><span class="fa fa-align-justify"></span> Categories</a></li>
@@ -40,7 +42,7 @@
                                 </ul>
                             </li>
                             <li class="xn-openable">
-                                <a href="#"><span class="fa fa-files-o"></span>Transaksi</a>
+                                <a href=""><span class="fa fa-files-o"></span>Transaksi</a>
                                 <ul>
                                     <li><a href="salescreate"><span class="fa fa-align-justify"></span>Sales</a></li>
                                     <li><a href="detail_salescreate"><span class="fa fa-align-justify"></span>Detil Sales</a></li>
@@ -53,7 +55,7 @@
                         <a href="#"><span class="fa fa-table"></span> <span class="xn-text">Tabel</span></a>
                         <ul>
                             <li class="xn-openable">
-                                <a href="#"><span class="fa fa-files-o"></span> Master</a>
+                                <a href=""><span class="fa fa-files-o"></span> Master</a>
                                 <ul>
                                     <li><a href="customerindex"><span class="fa fa-align-justify"></span>Customer</a></li>
                                     <li><a href="categoriesindex"><span class="fa fa-align-justify"></span> Categories</a></li>
@@ -69,10 +71,12 @@
                                 </ul>
                             </li>                                                  
                         </ul>
-                    </li>
+                    
 
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-tasks"></span> <span class="xn-text">Point Of Sales</span></a></li>
+                    <!-- <li class="xn-openable">
+                        <a href="detail_salescreate"><span class="fa fa-files"></span> <span class="xn-text">Point of Sales</span></a>
+                        </li>
+                        </li> -->
                     <!--
                     <li class="xn-title">Components</li>
                     <li class="xn-openable">

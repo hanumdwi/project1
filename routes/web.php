@@ -73,8 +73,9 @@ Route::get('admin/sidebar', 'AdminController@tampil_sidebar');
 ///////////////////////////////////////////////////////////////////
 
 Route::get('/', function () {
-    return view('index');
+    return view('sembarang');
 });
+//Route::get('sembarang', 'CheckoutController@GetAddress');
 
 Route::get('customerindex', 'master\controller_customer@index');
 Route::get('customercreate', 'master\controller_customer@create');
@@ -105,13 +106,16 @@ Route::post('userupdate', 'master\controller_user@update');
 Route::get('userdestroy{id}', 'master\controller_user@destroy');
 
 
-Route::get('sales/index', 'transaksi\controller_sales@index');
-Route::get('sales/create', 'transaksi\controller_sales@create');
+Route::get('salesindex', 'transaksi\controller_sales@index');
+Route::get('salescreate', 'transaksi\controller_sales@create');
 Route::get('sales/edit', 'transaksi\controller_sales@edit');
 Route::get('sales/destroy', 'transaksi\controller_sales@destroy');
 
-Route::get('detail_salesindex', 'transaksi\controller_detail_sales@index');
-Route::get('detail_salescreate', 'transaksi\controller_detail_sales@create');
+Route::get('dsalesindex', 'transaksi\controller_detail_sales@index');
+Route::get('salesdcreate', 'transaksi\controller_salesd@create');
 Route::get('detail_sales/edit', 'transaksi\controller_detail_sales@edit');
 Route::get('detail_sales/destroy', 'transaksi\controller_detail_sales@destroy');
+
+Route::get('detilsales', 'transaksi\controller_detail_sales@index');
+
 

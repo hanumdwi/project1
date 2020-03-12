@@ -4,6 +4,8 @@ namespace App\Http\Controllers\transaksi;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class controller_sales extends Controller
 {
@@ -14,7 +16,7 @@ class controller_sales extends Controller
      */
     public function index()
     {
-        //
+        return view('transaksi/sales/index');
     }
 
     /**
@@ -24,7 +26,7 @@ class controller_sales extends Controller
      */
     public function create()
     {
-        //
+        return view('transaksi/sales/create');
     }
 
     /**
