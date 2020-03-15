@@ -41,6 +41,16 @@
 
 
         <div class="form-group">
+        <label class="col-md-3 control-label">Product Name</label>
+        <div class="col-md-9">                                            
+            <div class="input-group">
+                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                    <input type="text" class="form-control" id="product_name" name="product_name" value="{{ $p->product_name }}"><br/></div>                                            
+                        <span class="help-block"></span>
+                            </div>
+                                </div>
+
+        <div class="form-group">
         <label class="col-md-3 control-label">Product Price</label>
         <div class="col-md-9">                                            
             <div class="input-group">

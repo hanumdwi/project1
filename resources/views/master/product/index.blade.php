@@ -24,6 +24,7 @@
                                                     <th width="50">Product id</th>
                                                     <th>Category id</th>
                                                     <th>Product Price</th>
+                                                    <th>Product Name</th>
                                                     <th>Product Stock</th>
                                                     <th>Explanation</th>
                                                     <th>Actions</th>
@@ -35,6 +36,7 @@
                                                     <th scope="row">{{ $loop->iteration }}</th>
                                                     <td>{{ $p -> product_id }}</td>
                                                     <td>{{ $p -> category_id }}</td>
+                                                    <td>{{ $p -> product_name }}</td>
                                                     <td>{{ $p -> product_price }}</td>
                                                     <td>{{ $p -> product_stock }}</td>
                                                     <td>{{ $p -> explanation }}</td>

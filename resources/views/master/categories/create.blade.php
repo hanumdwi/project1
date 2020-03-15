@@ -33,8 +33,8 @@
                                                 </div>
                                             </div>
                                             <div class="panel-footer">
-                                    <button class="btn btn-default">Clear Form</button>                                    
-                                    <button class="btn btn-primary pull-right">Submit</button>
+                                            <button class="btn btn-primary pull-right">Submit</button>
+                                            <!-- <button type="button" class="btn btn-info active">Submit</button>                    -->
                                 </div>
                             </div>
                             </form>
