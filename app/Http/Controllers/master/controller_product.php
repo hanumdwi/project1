@@ -15,10 +15,10 @@ class controller_product extends Controller
      */
     public function index()
     {
-        $product = DB::table('product')->get();
-        
-       // dump($categories);
-        //dump($product);
+        $product = DB::table('product')
+        ->join('categories','product.category_id', '=', 'categories.category_id')
+        ->select('categories.category_name','product.product_id','product.product_name', 'product.product_price', 'product.product_stock', 'product.explanation')
+        ->get();
 
         return view ('master/product/index',['product' =>$product]);
     }

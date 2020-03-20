@@ -4,6 +4,7 @@ namespace App\Http\Controllers\transaksi;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class controller_salesd extends Controller
 {
@@ -24,7 +25,8 @@ class controller_salesd extends Controller
      */
     public function create()
     {
-        return view('transaksi/salesd/create');
+        $categories = DB::table('categories')->get();
+        return view('transaksi/salesd/create',['categories' =>$categories]);
     }
 
     /**

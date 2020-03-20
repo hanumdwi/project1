@@ -22,9 +22,9 @@
                                                 <tr>
                                                 <th scope="row">#</th>
                                                     <th width="50">Product id</th>
-                                                    <th>Category id</th>
-                                                    <th>Product Price</th>
+                                                    <th>Category Name</th>
                                                     <th>Product Name</th>
+                                                    <th>Product Price</th>
                                                     <th>Product Stock</th>
                                                     <th>Explanation</th>
                                                     <th>Actions</th>
@@ -35,7 +35,7 @@
                                                     <tr>
                                                     <th scope="row">{{ $loop->iteration }}</th>
                                                     <td>{{ $p -> product_id }}</td>
-                                                    <td>{{ $p -> category_id }}</td>
+                                                    <td>{{ $p -> category_name }}</td>
                                                     <td>{{ $p -> product_name }}</td>
                                                     <td>{{ $p -> product_price }}</td>
                                                     <td>{{ $p -> product_stock }}</td>
