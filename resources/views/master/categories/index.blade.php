@@ -22,7 +22,7 @@
                                                 <tr>
                                                 <th scope="row">#</th>
                                                     <th>Category Name</th>
-                                                    <th>Actions</th>
+                                                    <th width="50">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>                                            

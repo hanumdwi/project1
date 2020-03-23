@@ -144,9 +144,35 @@
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
                 <label class="control-label col-md-5 col-sm-5 col-xs-5" for="categoriesname">
-                                  <div class="payment-method">
-                                  <h3>Coupon Code</h3>
-                                    
+                <!-- <div class="col-md-6"> -->
+                <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h3>Code Cupon</h3>
+                                    <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <div class="col-md-20">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <input class="form-control" placeholder=""/>                                                
+                                            </div>                                                                                        
+                                        </div>                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="btn-group pull-left">
+                                                <!-- <button class="btn btn-primary"><span class="fa fa-camera"></span></button>
+                                                <button class="btn btn-primary"><span class="fa fa-map-marker"></span></button>
+                                                <button class="btn btn-primary"><span class="fa fa-calendar"></span></button> -->
+                                            </div>
+                                            <div class="pull-right">
+                                                <button class="btn btn-danger"><span class="fa fa-share"></span> SEND</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+
+                                
     				</div>
     				<!-- <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Estimate</a></p> -->
     			</div>

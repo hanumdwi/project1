@@ -73,9 +73,11 @@ Route::get('admin/sidebar', 'AdminController@tampil_sidebar');
 ///////////////////////////////////////////////////////////////////
 
 Route::get('/', function () {
-    return view('sembarang');
+    return view('bismillah');
 });
 //Route::get('sembarang', 'CheckoutController@GetAddress');
+
+Route::get('sembarang', 'MyFirstController@index');
 
 Route::get('customerindex', 'master\controller_customer@index');
 Route::get('customercreate', 'master\controller_customer@create');

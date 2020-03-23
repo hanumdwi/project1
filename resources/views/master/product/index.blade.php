@@ -24,10 +24,10 @@
                                                     <th width="50">Product id</th>
                                                     <th>Category Name</th>
                                                     <th>Product Name</th>
-                                                    <th>Product Price</th>
+                                                    <th>Product Price </th>
                                                     <th>Product Stock</th>
                                                     <th>Explanation</th>
-                                                    <th>Actions</th>
+                                                    <th width="50">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>                                            
