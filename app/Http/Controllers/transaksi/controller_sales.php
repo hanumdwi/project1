@@ -5,6 +5,7 @@ namespace App\Http\Controllers\transaksi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\customer;
 
 
 class controller_sales extends Controller
@@ -16,7 +17,14 @@ class controller_sales extends Controller
      */
     public function index()
     {
-        return view('transaksi/sales/index');
+        $sales = DB::table('customer')
+        ->join('sales', 'customer.customer_id', '=', 'sales.customer_id')
+        ->join('user', 'sales.user_id', '=', 'user.user_id')
+        ->select('sales.nota_id', DB::raw('CONCAT(customer.first_name, " ", customer.last_name) as customer_id'), DB::raw('CONCAT(user.first_name,  " " , user.last_name) as user_id'),
+            'sales.nota_date', 'sales.total_payment')
+        ->get();
+        //dump($sales);
+        return view('transaksi/sales/index', ['sales'=>$sales]);
     }
 
     /**
@@ -26,7 +34,11 @@ class controller_sales extends Controller
      */
     public function create()
     {
-        return view('transaksi/sales/create');
+        $customer = DB::table('customer')->get();
+        $user = DB::table('user')->get();
+        $product = DB::table('product')->get();
+        //dump($sales);
+        return view('transaksi/sales/create', ['customer'=> $customer, 'user'=> $user, 'product'=> $product]);
     }
 
     /**
@@ -37,7 +49,13 @@ class controller_sales extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('sales')->insert([
+            'customer_id' => $request->input('customer_id'),
+            'user_id' => $request->input('user_id'),
+            'nota_date' => $request->input('nota_date'),
+            'total_payment' => $request->input('total_payment')]
+        );
+        return redirect( 'salesindex' );
     }
 
     /**
@@ -57,9 +75,15 @@ class controller_sales extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return "Ini Halaman Edit";
+     
+        $customer = DB::table('customer')->get();
+        $user = DB::table('user')->get();
+        $sales=DB::table('sales')
+            ->where('nota_id', $id)->get();
+
+        return view('transaksi.sales.edit',['customer'=> $customer, 'user'=> $user, 'sales'=>$sales] );
     }
 
     /**
@@ -69,9 +93,17 @@ class controller_sales extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('sales')
+        ->where('nota_id', $request->id)
+        ->update([
+            'customer_id' => $request->input('customer_id'),
+            'user_id' => $request->input('user_id'),
+            'nota_date' => $request->input('nota_date'),
+            'total_payment' => $request->input('total_payment')]
+        );
+    return redirect('salesindex');
     }
 
     /**
@@ -80,8 +112,9 @@ class controller_sales extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-        return "Ini Halaman Destroy";
+        DB::table('sales')->where('nota_id','=', $id)->delete();
+        return redirect( 'salesindex' );
     }
 }

@@ -22,36 +22,39 @@
                                         
                                         <div class="col-md-6">
                                             
+                                        
                                         <div class="form-group">
-                                                <label class="col-md-3 control-label">Nota Id</label>
+                                                <label class="col-md-3 control-label">Customer Name</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="text" class="form-control" id="nota_id" name="nota_id" />
+                                                    <select class="form-control" id="customer_id" required="" name="customer_id">
+                                                        <option selected="">Pilih Customer</option>
+                                                        @foreach($customer as $cus)
+                                                        <option value="{{ $cus->customer_id }}">{{$cus->first_name}}</option>
+                                                        @endforeach
+                                                        </select>
+                                                    </div>
                                                     </div>                                            
-                                                    <span class="help-block">This is sample of text field</span>
+                                                  
                                                 </div>
-                                            </div>
+                                            
+                                            
                                         <div class="form-group">
-                                                <label class="col-md-3 control-label">Customer Id</label>
-                                                <div class="col-md-9">                                            
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="text" class="form-control" id="customer_id" name="customer_id" />
-                                                    </div>                                            
-                                                    <span class="help-block">This is sample of text field</span>
-                                                </div>
-                                            </div>
-                                        <div class="form-group">
+                                       
                                                 <label class="col-md-3 control-label">User Id</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="text" class="form-control" id="user_id" name="user_id" />
+                                                    <select class="form-control" id="user_id" required="" name="user_id">
+                                                        <option selected="">Pilih User</option>
+                                                        @foreach($user as $u)
+                                                        <option value="{{ $u->user_id }}">{{$u->first_name}}</option>
+                                                        @endforeach
+                                                        </select>
                                                     </div>                                            
-                                                    <span class="help-block">This is sample of text field</span>
+                                                  
                                                 </div>
                                             </div>
+                                            
                                         <div class="form-group">
                                                 <label class="col-md-3 control-label">Nota Date</label>
                                                 <div class="col-md-9">                                            
@@ -59,7 +62,7 @@
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                                         <input type="date" class="form-control" id="nota_date" name="nota_date" />
                                                     </div>                                            
-                                                    <span class="help-block">This is sample of text field</span>
+                                                  
                                                 </div>
                                             </div>
                                         <div class="form-group">
@@ -69,16 +72,18 @@
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                                         <input type="text" class="form-control" id="total_payment" name="total_payment" />
                                                     </div>                                            
-                                                    <span class="help-block">This is sample of text field</span>
+                                                  
                                                 </div>
                                             </div>
                                      
                                             <div class="panel-footer">
-                                            <button type="button" class="btn btn-info active">Submit</button>                   
+                                                                   
+                                    <button class="btn btn-primary pull-right">Submit</button>
+                                                 
                                 </div>
                             </div>
                             </form>
-                            
+                            </div>
                         </div>
                     </div>                    
                     

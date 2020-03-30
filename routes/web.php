@@ -73,7 +73,7 @@ Route::get('admin/sidebar', 'AdminController@tampil_sidebar');
 ///////////////////////////////////////////////////////////////////
 
 Route::get('/', function () {
-    return view('bismillah');
+    return view('about');
 });
 //Route::get('sembarang', 'CheckoutController@GetAddress');
 
@@ -110,8 +110,10 @@ Route::get('userdestroy{id}', 'master\controller_user@destroy');
 
 Route::get('salesindex', 'transaksi\controller_sales@index');
 Route::get('salescreate', 'transaksi\controller_sales@create');
-Route::get('sales/edit', 'transaksi\controller_sales@edit');
-Route::get('sales/destroy', 'transaksi\controller_sales@destroy');
+Route::post('salesstore', 'transaksi\controller_sales@store');
+Route::get('salesedit{id}', 'transaksi\controller_sales@edit');
+Route::post('salesupdate', 'transaksi\controller_sales@update');
+Route::get('salesdestroy{id}', 'transaksi\controller_sales@destroy');
 
 Route::get('dsalesindex', 'transaksi\controller_detail_sales@index');
 Route::get('salesdcreate', 'transaksi\controller_salesd@create');

@@ -165,7 +165,7 @@
                                                 <button class="btn btn-primary"><span class="fa fa-calendar"></span></button> -->
                                             </div>
                                             <div class="pull-right">
-                                                <button class="btn btn-danger"><span class="fa fa-share"></span> SEND</button>
+                                                <button class="btn btn-info"><span class="fa fa-share"></span>Submit</button>
                                             </div>
                                         </div>
                                     </div>

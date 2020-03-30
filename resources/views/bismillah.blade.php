@@ -49,7 +49,7 @@
 	              <h1 class="mb-2">Welcome to Our Website</h1>
                   <h2 class="subheading mb-4">If you want to check admin template &amp; You Must click Dashboard</h2>
 	              <h2 class="subheading mb-4"></h2>
-	              <p><a href="sembarang" class="btn btn-primary">Dashboard</a></p>
+	              <p><a href="sembarang" class="btn btn-primary">Login</a></p>
 	            </div>
 
 	          </div>
