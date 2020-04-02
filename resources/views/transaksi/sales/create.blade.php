@@ -27,12 +27,19 @@
                                                 <label class="col-md-3 control-label">Customer Name</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
-                                                    <select class="form-control" id="customer_id" required="" name="customer_id">
+                                                    <select name="customer_id" class="form-control" id="customer_id">
+                                           @foreach($customer as $cus)
+                                           @if($cus->status == 1)
+                                           <option value="{{$cus->customer_id}}">{{$cus->first_name}}</option>
+                                            @endif
+                                           @endforeach                           
+                          </select>
+                                                    <!-- <select class="form-control" id="customer_id" required="" name="customer_id">
                                                         <option selected="">Pilih Customer</option>
                                                         @foreach($customer as $cus)
                                                         <option value="{{ $cus->customer_id }}">{{$cus->first_name}}</option>
                                                         @endforeach
-                                                        </select>
+                                                        </select> -->
                                                     </div>
                                                     </div>                                            
                                                   
@@ -44,12 +51,19 @@
                                                 <label class="col-md-3 control-label">User Id</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
-                                                    <select class="form-control" id="user_id" required="" name="user_id">
+                                                    <select name="user_id" class="form-control" id="user_id">
+                                           @foreach($user as $u)
+                                           @if($u->status == 1)
+                                           <option value="{{$u->user_id}}">{{$u->first_name}}</option>
+                                            @endif
+                                           @endforeach                           
+                          </select>
+                                                    <!-- <select class="form-control" id="user_id" required="" name="user_id">
                                                         <option selected="">Pilih User</option>
                                                         @foreach($user as $u)
                                                         <option value="{{ $u->user_id }}">{{$u->first_name}}</option>
                                                         @endforeach
-                                                        </select>
+                                                        </select> -->
                                                     </div>                                            
                                                   
                                                 </div>

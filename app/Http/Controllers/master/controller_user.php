@@ -89,7 +89,8 @@ class controller_user extends Controller
             'phone'        => $request->phone,
             'email'        => $request->email,
             'password'     => $request->password,
-            'job_status'   => $request->jobstatus
+            'job_status'   => $request->jobstatus,
+            'status'       => $request->status
         ]);
      
              return redirect('userindex');

@@ -111,6 +111,18 @@
                             </div>
                                 </div>
         
+
+        <div class="form-group">
+        <label class="col-md-3 control-label">Status</label>
+        <div class="col-md-9">                                            
+            <div class="input-group">
+                        <select name="status" id="status" class="form-control col-md-7 col-xs-12">
+                        <option value="1">Active</option>
+                        <option value="0">Non-Active</option>
+                        </select>
+                            </div>
+                                </div>
+
         
 		<button type="submit" class="btn btn-info mt-3">Simpan Data</button>
 	</form>

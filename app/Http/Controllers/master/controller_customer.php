@@ -101,7 +101,8 @@ class controller_customer extends Controller
             'street'       => $request->street,
             'city'         => $request->city,
             'state'        => $request->state,
-            'zip_code'     => $request->zipcode
+            'zip_code'     => $request->zipcode,
+            'status'       => $request->status
 		]);
 		// alihkan halaman ke halaman customer
 		return redirect('customerindex');

@@ -79,10 +79,11 @@ class controller_categories extends Controller
     public function update(Request $request)
     {
         DB::table('categories')->where('category_id',$request->id)->update([
-            'category_name'     => $request->category_name
+            'category_name'     => $request->category_name,
+            'status'            => $request->status
         ]);
      
-             return redirect('categoriesindex');
+             return redirect('categoriesindex')->with('statusupdate','Data berhasil di Update');
     }
 
     /**

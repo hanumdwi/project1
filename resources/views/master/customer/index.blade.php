@@ -32,6 +32,7 @@
                                                     <th>City</th>
                                                     <th>State</th>
                                                     <th>Zip Code</th>
+                                                    <th>Status</th>
                                                     <th width="50">actions</th>
                                                 </tr>
                                             </thead>
@@ -48,6 +49,11 @@
                                                     <td>{{ $cus -> city }}</td>
                                                     <td>{{ $cus -> state }}</td>
                                                     <td>{{ $cus -> zip_code }}</td>
+                                                    @if($cus -> status == 1)  
+                                                                    <td><span class="label label-success">Active</span></td>
+                                                                @else   
+                                                                    <td><span class="label label-primary">Non-Active</span></td>
+                                                            @endif
                                                     
                                                     <td><a href="customeredit{{$cus -> customer_id}}">
                                                     <button type="button" class="btn btn-light">

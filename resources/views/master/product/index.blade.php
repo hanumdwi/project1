@@ -27,6 +27,7 @@
                                                     <th>Product Price </th>
                                                     <th>Product Stock</th>
                                                     <th>Explanation</th>
+                                                    <th>Status</th>
                                                     <th width="50">Actions</th>
                                                 </tr>
                                             </thead>
@@ -40,6 +41,11 @@
                                                     <td>{{ $p -> product_price }}</td>
                                                     <td>{{ $p -> product_stock }}</td>
                                                     <td>{{ $p -> explanation }}</td>
+                                                            @if($p -> status == 1)  
+                                                                    <td><span class="label label-success">Active</span></td>
+                                                                @else   
+                                                                    <td><span class="label label-primary">Non-Active</span></td>
+                                                            @endif
                                                     
                                                     <td><a href="productedit{{$p -> product_id}}">
                                                     <button type="button" class="btn btn-light">

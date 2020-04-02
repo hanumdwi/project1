@@ -17,7 +17,7 @@ class controller_product extends Controller
     {
         $product = DB::table('product')
         ->join('categories','product.category_id', '=', 'categories.category_id')
-        ->select('categories.category_name','product.product_id','product.product_name', 'product.product_price', 'product.product_stock', 'product.explanation')
+        ->select('categories.category_name','product.product_id','product.product_name', 'product.product_price', 'product.product_stock', 'product.explanation','product.status')
         ->get();
 
         return view ('master/product/index',['product' =>$product]);
@@ -47,7 +47,8 @@ class controller_product extends Controller
             'product_name'     =>  $request->product_name,
             'product_price'     => $request->product_price,
             'product_stock'     => $request->product_stock,
-            'explanation'       => $request->explanation
+            'explanation'       => $request->explanation,
+            'status'            => $request->status
              ]);
      
              return redirect('productindex');
@@ -72,9 +73,10 @@ class controller_product extends Controller
      */
     public function edit($id)
     {
+        $categories = DB::table('categories')->get();
         $product = DB::table('product')->where('product_id',$id)->get();
 		// passing data product yang didapat ke view edit.blade.php
-		return view('master.product.edit',['product' => $product]);
+		return view('master.product.edit',['product' => $product], ['categories' => $categories]);
     }
 
     /**
@@ -86,12 +88,14 @@ class controller_product extends Controller
      */
     public function update(Request $request)
     {
+        
         DB::table('product')->where('product_id',$request->id)->update([
             'category_id'       => $request->category_id,
             'product_name'     => $request->product_name,
             'product_price'     => $request->product_price,
             'product_stock'     => $request->product_stock,
-            'explanation'       => $request->explanation
+            'explanation'       => $request->explanation,
+            'status'            => $request->status
         ]);
      
              return redirect('productindex');

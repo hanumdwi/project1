@@ -45,21 +45,6 @@
                         </div>
                         </div>
                      </form>
-                    <!-- <div class="form-group mb-3">
-                        <label for="exampleInputEmail1">Product Id</label>
-                        <input class="form-control" type="text" placeholder="" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Category Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Product Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
-                
-                    <button type="button" class="btn btn-info active">Submit</button>                   
-                    </form> -->
                     
                     <div class="panel panel-default">
                                 <div class="panel-heading">

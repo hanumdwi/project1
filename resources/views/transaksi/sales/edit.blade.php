@@ -33,7 +33,15 @@
         <label class="col-md-3 control-label">Category Id</label>
         <div class="col-md-9">                                            
             <div class="input-group">
+            <!-- <select name="customer_id" class="form-control" id="customer_id">
+                                           @foreach($customer as $cus)
+                                           @if($c->status == 1)
+                                           <option value="{{$cus->customer_id}}">{{$cus->category_name}}</option>
+                                            @endif
+                                           @endforeach                           
+                          </select> -->
             <select class="form-control" id="customer_id" required="" name="customer_id">
+
                                                         <option disabled selected="">Pilih Kategori</option>
                                                         @foreach($customer as $cus)
                                                         <option value="{{ $cus->customer_id }}">{{$cus->first_name}}</option>
@@ -47,6 +55,13 @@
         <label class="col-md-3 control-label">sales Name</label>
         <div class="col-md-9">                                            
             <div class="input-group">
+            <!-- <select name="user_id" class="form-control" id="user_id">
+                                           @foreach($user as $u)
+                                           @if($c->status == 1)
+                                           <option value="{{$u->user_id}}">{{$u->category_name}}</option>
+                                            @endif
+                                           @endforeach                           
+                          </select> -->
             <select class="form-control" id="user_id" required="" name="user_id">
                                                         <option disabled selected="">Pilih Kategori</option>
                                                         @foreach($user as $u)

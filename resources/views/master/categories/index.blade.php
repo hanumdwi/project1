@@ -22,6 +22,7 @@
                                                 <tr>
                                                 <th scope="row">#</th>
                                                     <th>Category Name</th>
+                                                    <th>Status</th>
                                                     <th width="50">Actions</th>
                                                 </tr>
                                             </thead>
@@ -30,7 +31,12 @@
                                                     <tr>
                                                     <th scope="row">{{ $loop->iteration }}</th>
                                                     <td>{{ $c -> category_name }}</td>
-                                                    
+
+                                                            @if($c -> status == 1)  
+                                                                    <td><span class="label label-success">Active</span></td>
+                                                                @else   
+                                                                    <td><span class="label label-primary">Non-Active</span></td>
+                                                            @endif
                                                     <td><a href="categoriesedit{{$c -> category_id}}">
                                                     <button type="button" class="btn btn-light">
                                                     <svg class="bi bi-pencil" width="3em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

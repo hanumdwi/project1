@@ -73,7 +73,7 @@ Route::get('admin/sidebar', 'AdminController@tampil_sidebar');
 ///////////////////////////////////////////////////////////////////
 
 Route::get('/', function () {
-    return view('about');
+    return view('bismillah');
 });
 //Route::get('sembarang', 'CheckoutController@GetAddress');
 

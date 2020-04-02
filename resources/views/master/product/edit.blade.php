@@ -33,9 +33,16 @@
         <label class="col-md-3 control-label">Category Id</label>
         <div class="col-md-9">                                            
             <div class="input-group">
-                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                <!-- <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                     <input type="text" class="form-control" id="category_id" name="category_id" value="{{ $p->category_id }}"><br/></div>                                            
-                        <span class="help-block"></span>
+                        <span class="help-block"></span> -->
+                        <select name="category_id" class="form-control" id="category_id">
+                                           @foreach($categories as $c)
+                                           @if($c->status == 1)
+                                           <option value="{{$c->category_id}}">{{$c->category_name}}</option>
+                                            @endif
+                                           @endforeach                           
+                          </select>
                             </div>
                                 </div>
 
@@ -77,6 +84,20 @@
                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                     <input type="text" class="form-control" id="explanation" name="explanation" value="{{ $p->explanation }}"><br/></div>                                            
                         <span class="help-block"></span>
+                            </div>
+                                </div>
+
+        <div class="form-group">
+        <label class="col-md-3 control-label">Status</label>
+        <div class="col-md-9">                                            
+            <div class="input-group">
+                <!-- <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                    <input type="text" class="form-control" id="status" name="status" value="{{ $c->status }}"><br/></div>                                            
+                        <span class="help-block"></span> -->
+                        <select name="status" id="status" class="form-control col-md-7 col-xs-12">
+                        <option value="1">Active</option>
+                        <option value="0">Non-Active</option>
+                        </select>
                             </div>
                                 </div>
         

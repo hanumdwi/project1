@@ -28,6 +28,7 @@
                                                     <th width="100">Email</th>
                                                     <th width="100">Password</th>
                                                     <th width="100">Job Status</th>
+                                                    <th width="100">Status</th>
                                                     <th width="100">actions</th>
                                                 </tr>
                                             </thead>
@@ -42,6 +43,11 @@
                                                     <td>{{ $u -> email }}</td>
                                                     <td>{{ $u -> password }}</td>
                                                     <td>{{ $u -> job_status }}</td>
+                                                    @if($u -> status == 1)  
+                                                                    <td><span class="label label-success">Active</span></td>
+                                                                @else   
+                                                                    <td><span class="label label-primary">Non-Active</span></td>
+                                                            @endif
                                                     
                                                     <td><a href="useredit{{$u -> user_id}}">
                                                     <button type="button" class="btn btn-light">
