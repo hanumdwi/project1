@@ -99,4 +99,30 @@ class controller_categories extends Controller
 		// alihkan halaman ke halaman categories
 		return redirect('categoriesindex');
     }
+
+    public function update_switch(Request $request)
+    {
+        $categories=DB::table('categories')->where('category_id',$request->id)->value('status','=','1');
+        if($categories){
+            DB::table('categories')
+                ->where('category_id',$request->id)
+                ->update(['status'=>0]);
+        }
+        else{
+            DB::table('categories')
+                ->where('category_id',$request->id)
+                ->update(['status'=>1]);
+        }
+        return redirect('categoriesindex');
+        // $categories=categories::find($request->id);
+        // dump($categories);
+        // if($categories->status==1){
+        //     $categories->status=0;
+        // }
+        // else{
+        //     $categories->status=1;
+        // }
+        // $categories->save();
+        // return redirect('categoriesindex');
+    }
 }

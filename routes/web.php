@@ -85,6 +85,7 @@ Route::post('customerstore', 'master\controller_customer@store');
 Route::get('customeredit{id}', 'master\controller_customer@edit');
 Route::post('customerupdate', 'master\controller_customer@update');
 Route::get('customerdestroy{id}', 'master\controller_customer@destroy');
+Route::post('customerupdateswitch', 'master\controller_customer@update_switch');
 
 Route::get('productindex', 'master\controller_product@index');
 Route::get('productcreate', 'master\controller_product@create');
@@ -99,6 +100,7 @@ Route::post('categoriesstore', 'master\controller_categories@store');
 Route::get('categoriesedit{id}', 'master\controller_categories@edit');
 Route::post('categoriesupdate', 'master\controller_categories@update');
 Route::get('categoriesdestroy{id}', 'master\controller_categories@destroy');
+Route::post('categoriesupdateswitch', 'master\controller_categories@update_switch');
 
 Route::get('userindex', 'master\controller_user@index');
 Route::get('usercreate', 'master\controller_user@create');

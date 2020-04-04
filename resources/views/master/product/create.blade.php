@@ -26,12 +26,19 @@
                                                 <label for="category_id" class="col-md-3 control-label">Category Id</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
-                                                        <select class="form-control" id="category_id" required="" name="category_id">
+                                                    <select name="category_id" class="form-control" id="category_id">
+                                                        @foreach($categories as $c)
+                                                        @if($c->status == 1)
+                                                        <option value="{{$c->category_id}}">{{$c->category_name}}</option>
+                                                            @endif
+                                                        @endforeach                           
+                                                    </select>
+                                                        <!-- <select class="form-control" id="category_id" required="" name="category_id">
                                                         <option disabled selected="">Pilih Kategori</option>
                                                         @foreach($categories as $c)
                                                         <option value="{{ $c->category_id }}">{{$c->category_name}}</option>
                                                         @endforeach
-                                                        </select>
+                                                        </select> -->
                                                     </div>                                            
                                                    
                                                 </div>
@@ -69,6 +76,16 @@
 
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Explanation</label>
+                                                <div class="col-md-9">                                            
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                        <input type="text" class="form-control" id="explanation" name="explanation" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Status</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>

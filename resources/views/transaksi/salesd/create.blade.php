@@ -38,10 +38,58 @@
                       </div>
                       <form>
                       <div class="panel panel-default"> 
-                                <div class="panel-heading">
+                        <div class="panel-heading">
                         <div class="form-group">
                             <label for="exampleInputProductID"></label>
-                            <input type="text" class="form-control" id="exampleInputProductID" placeholder="Enter Your Product ID">
+                            <!-- <input type="text" class="form-control" id="exampleInputProductID" placeholder="Enter Your Product ID"> -->
+                            <input type="text" class="form-control" id="search" name="search" value="" placeholder="Enter Your Product Name!" onkeyup="getModal(event)">
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                        <font size="3"> <table class="table table-striped table-bordered mydatatable"></font>
+                                        <thead class="thead-dark">
+                                            <tr>
+                                            <th scope="col">#</th>
+                                                    <th>Product Name</th>
+                                                    <th>Product Price </th>
+                                                    <th>Product Stock</th>
+                                                    
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach($product as $p)
+                                            <tr>
+                                            <th scope="row"><input type="checkbox" id="{{$p->product_id }}" ></th>
+                                            <td>{{ $p->product_name}}</td>
+                                            <td>{{ $p->product_price}}</td>
+                                            <td>{{ $p->product_stock}}</td>
+                                            </tr>
+                                            @endforeach
+                                            </tbody>
+                                            </table>
+
+                                        </div> <!-- Tutup Modal Body -->
+                                        <div class="modal-footer">
+                                        <!-- <button type="button" class="btn btn-success" id="save" > -->
+                                        <!-- <svg aria-hidden="true" width="2px" height="2px" focusable="false" data-prefix="far" class=""></svg> Add To Cart</button> -->
+                                        <font size="6"><button type="button" class="badge badge-info" data-dismiss="modal">Add</button></font>
+                                        <font size="6"><button type="button" class="badge badge-danger" data-dismiss="modal">Back</button></font>
+                                        
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
                         </div>
                         </div>
                      </form>
@@ -214,6 +262,17 @@
         </div>
         <!-- END PAGE CONTAINER -->    
                                     
-        
-   
+<script>
+        function getModal(event){
+        if(event.keyCode==13){
+            $("#tambahModal").modal();
+            myFunction();
+        }
+    }
+
+    function myFunction() {
+     document.getElementById("search").value='';
+    }
+
+</script>
 @endsection

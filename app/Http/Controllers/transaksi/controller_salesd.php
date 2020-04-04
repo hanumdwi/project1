@@ -26,7 +26,8 @@ class controller_salesd extends Controller
     public function create()
     {
         $categories = DB::table('categories')->get();
-        return view('transaksi/salesd/create',['categories' =>$categories]);
+        $product = DB::table('product')->get();
+        return view('transaksi/salesd/create',['categories' =>$categories, 'product'=>$product]);
     }
 
     /**

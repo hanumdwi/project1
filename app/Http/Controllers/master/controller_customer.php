@@ -122,4 +122,20 @@ class controller_customer extends Controller
 		// alihkan halaman ke halaman customer
 		return redirect('customerindex');
     }
+
+    public function update_switch(Request $request)
+    {
+        $customer=DB::table('customer')->where('customer_id',$request->id)->value('status','=','1');
+        if($customer){
+            DB::table('customer')
+                ->where('customer_id',$request->id)
+                ->update(['status'=>0]);
+        }
+        else{
+            DB::table('customer')
+                ->where('customer_id',$request->id)
+                ->update(['status'=>1]);
+        }
+        return redirect('customerindex');
+    }
 }

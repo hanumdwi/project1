@@ -49,11 +49,25 @@
                                                     <td>{{ $cus -> city }}</td>
                                                     <td>{{ $cus -> state }}</td>
                                                     <td>{{ $cus -> zip_code }}</td>
-                                                    @if($cus -> status == 1)  
-                                                                    <td><span class="label label-success">Active</span></td>
-                                                                @else   
-                                                                    <td><span class="label label-primary">Non-Active</span></td>
-                                                            @endif
+
+                                                    <td>
+                                                    <form class="post0" method="post" action="customerupdateswitch">
+                                                    @csrf
+                                                    <input type="hidden" name="id" value="{{$cus->customer_id}}">
+                                                    @if($cus -> status == 1)
+                                                        <label class="switch" for="switch{{$cus->customer_id}}">
+                                                            <input type="checkbox" checked id="switch{{$cus->customer_id}}"/>
+                                                            <span></span></label>
+                                                            <p><p class="label label-success">Active</p></p>
+                                                        
+                                                        @else 
+                                                        <label class="switch" for="switch{{$cus->customer_id}}">
+                                                            <input type="checkbox" id="switch{{$cus->customer_id}}"/>
+                                                            <span></span></label>
+                                                            <p><p class="label label-danger">Non-Active</p></p>
+                                                        @endif
+                                                        </form>
+                                                        </td>
                                                     
                                                     <td><a href="customeredit{{$cus -> customer_id}}">
                                                     <button type="button" class="btn btn-light">
@@ -114,4 +128,14 @@
         </div>
         <!-- END PAGE CONTAINER -->    
    
+        <script>
+            console.log('x : ')
+            const x = document.getElementsByClassName('post0');
+            for(let i=0;i<x.length;i++){
+                x[i].addEventListener('click',function(){
+                    x[i].submit();
+                });
+            }
+   </script>
+
 @endsection
