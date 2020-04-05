@@ -53,22 +53,7 @@
                                                         @endif
                                                         </form>
                                                         </td>
-                                                            <!-- @if($c -> status == 1)  
-                                                                    <td><span class="label label-success">Active</span></td>
-                                                                @else   
-                                                                    <td><span class="label label-primary">Non-Active</span></td>
-                                                            @endif -->
-                                                        <!-- @if($c -> status == 1)
-                                                        <td><input type="checkbox" checked class="custom-control-input" id="switch{{$c->category_id}}"/>
-                                                            <label class="switch" class="custom-control-label" for="switch{{$c->category_id}}"></label>
-                                                                <span>Active</span>
-                                                            </td>
-                                                            @else
-                                                            <td><input type="checkbox" checked class="custom-control-input" id="switch{{$c->category_id}}"/>
-                                                            <label class="switch" class="custom-control-label" for="switch{{$c->category_id}}"></label>
-                                                                <span>Non-Active</span>
-                                                            </td>
-                                                        @endif -->
+                                                            
                                                     <td>
                                                     @if($c -> status == 1)
                                                     <a href="categoriesedit{{$c -> category_id}}">
@@ -146,7 +131,8 @@
                                                             </div>
                                                             </div>
                                                         </div>
-                                                        </div>                     
+                                                        </div>    
+                                                        </td>                 
                                                 </tr>
                                                 @endforeach
                                             </tbody>

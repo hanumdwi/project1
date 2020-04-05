@@ -65,18 +65,48 @@
                                                             <input type="checkbox" id="switch{{$cus->customer_id}}"/>
                                                             <span></span></label>
                                                             <p><p class="label label-danger">Non-Active</p></p>
-                                                        @endif
+                                                    @endif
                                                         </form>
                                                         </td>
                                                     
-                                                    <td><a href="customeredit{{$cus -> customer_id}}">
+                                                    <!-- <td><a href="customeredit{{$cus -> customer_id}}">
+                                                    <button type="button" class="btn btn-light">
+                                                    <svg class="bi bi-pencil" width="3em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M13.293 3.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM14 4l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"></path>
+                                                    <path fill-rule="evenodd" d="M14.146 8.354l-2.5-2.5.708-.708 2.5 2.5-.708.708zM5 12v.5a.5.5 0 00.5.5H6v.5a.5.5 0 00.5.5H7v.5a.5.5 0 00.5.5H8v-1.5a.5.5 0 00-.5-.5H7v-.5a.5.5 0 00-.5-.5H5z" clip-rule="evenodd"></path>
+                                                    </svg>Edit </button></a> -->
+                                                    <td>
+                                                    @if($cus -> status == 1)
+                                                    <a href="customeredit{{$cus -> customer_id}}">
                                                     <button type="button" class="btn btn-light">
                                                     <svg class="bi bi-pencil" width="3em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M13.293 3.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM14 4l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"></path>
                                                     <path fill-rule="evenodd" d="M14.146 8.354l-2.5-2.5.708-.708 2.5 2.5-.708.708zM5 12v.5a.5.5 0 00.5.5H6v.5a.5.5 0 00.5.5H7v.5a.5.5 0 00.5.5H8v-1.5a.5.5 0 00-.5-.5H7v-.5a.5.5 0 00-.5-.5H5z" clip-rule="evenodd"></path>
                                                     </svg>Edit </button></a>
-                                                    
+                                                    @else
+                                                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal1{{$cus -> customer_id}}">
+                                                    <svg class="bi bi-pencil" width="3em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M13.293 3.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM14 4l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"></path>
+                                                    <path fill-rule="evenodd" d="M14.146 8.354l-2.5-2.5.708-.708 2.5 2.5-.708.708zM5 12v.5a.5.5 0 00.5.5H6v.5a.5.5 0 00.5.5H7v.5a.5.5 0 00.5.5H8v-1.5a.5.5 0 00-.5-.5H7v-.5a.5.5 0 00-.5-.5H5z" clip-rule="evenodd"></path>
+                                                    </svg>Edit </button>
 
+                                                    <div class="modal fade" id="exampleModal1{{$cus -> customer_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <!-- <h5 class="modal-title" id="exampleModalLabel"> customer</h5> -->
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Maaf.. Data Non-Active
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        </div>     
+                                                    @endif
                                                         <!-- Button trigger modal -->
                                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$cus -> customer_id}}">
                                                         <svg class="bi bi-trash" width="3em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -91,9 +121,6 @@
                                                             <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
-                                                                
-                                                               
-                                                              
                                                             </div>
                                                             <div class="modal-body">
                                                                 Anda yakin untuk menghapus data ?
@@ -105,12 +132,13 @@
                                                             </div>
                                                         </div>
                                                         </div>                        
+                                                    </td>
 
-
-
+                                                    @endforeach
                                                 </tr>
-                                                @endforeach
+                                                
                                             </tbody>
+                                           
                                         </table>
                                     </div>                                
 
