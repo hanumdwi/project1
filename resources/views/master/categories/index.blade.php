@@ -31,12 +31,42 @@
                                                     <tr>
                                                     <th scope="row">{{ $loop->iteration }}</th>
                                                     <td>{{ $c -> category_name }}</td>
-                                                    <td>                  
+                                                    <td> 
+                                                    @php $x=0; @endphp
+                                                        @foreach($product as $p)
+                                                            @if($c->category_id == $p->category_id)
+                                                                @php $x=1; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                    @if($x==0)               
                                                     <form class="post0" method="post" action="categoriesupdateswitch">
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{$c->category_id}}">
                                                     @if($c -> status == 1)
+                                                        <label class="switch" for="switch{{$c->category_id}}" >
+                                                            <input type="checkbox" checked id="switch{{$c->category_id}}"/>
+                                                            <span></span></label>
+                                                            <p><p class="label label-success">Active</p></p>
+                                                                <!-- <p>Active</p> -->
+                                                        
+                                                        @else 
                                                         <label class="switch" for="switch{{$c->category_id}}">
+                                                            <input type="checkbox" id="switch{{$c->category_id}}"/>
+                                                            <span></span></label>
+                                                            <p><p class="label label-danger">Non-Active</p></p>
+                                                           
+                                                        
+                                                        
+                                                        @endif
+                                                        
+                                                        </form>
+                                                        <!-- </td> -->
+                                                    @else
+                                                    <form id="modal{{$c->category_id}}" onclick="modal(id)" method="post" action="#">
+                                                    @csrf
+                                                    <input type="hidden" name="id" value="{{$c->category_id}}">
+                                                    @if($c -> status == 1)
+                                                        <label class="switch" for="switch">
                                                             <input type="checkbox" checked id="switch{{$c->category_id}}"/>
                                                             <span></span></label>
                                                             <p><p class="label label-success">Active</p></p>
@@ -52,8 +82,8 @@
                                                         
                                                         @endif
                                                         </form>
-                                                        </td>
-                                                            
+                                                    @endif
+                                                        </td>    
                                                     <td>
                                                     @if($c -> status == 1)
                                                     <a href="categoriesedit{{$c -> category_id}}">
@@ -68,6 +98,24 @@
                                                     <path fill-rule="evenodd" d="M13.293 3.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM14 4l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"></path>
                                                     <path fill-rule="evenodd" d="M14.146 8.354l-2.5-2.5.708-.708 2.5 2.5-.708.708zM5 12v.5a.5.5 0 00.5.5H6v.5a.5.5 0 00.5.5H7v.5a.5.5 0 00.5.5H8v-1.5a.5.5 0 00-.5-.5H7v-.5a.5.5 0 00-.5-.5H5z" clip-rule="evenodd"></path>
                                                     </svg>Edit </button>
+
+
+                                                    <div class="modal fade" id="tampil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <!-- <h5 class="modal-title" id="exampleModalLabel"> Category</h5> -->
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Maaf.. Data Telah digunakan di Product
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        </div>
 
                                                     <div class="modal fade" id="exampleModal1{{$c -> category_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
@@ -159,6 +207,11 @@
                 x[i].addEventListener('click',function(){
                     x[i].submit();
                 });
+            }
+
+            function modal(id){
+                const y=document.getElementById(id);
+                $("#tampil").modal();
             }
    </script>
 @endsection

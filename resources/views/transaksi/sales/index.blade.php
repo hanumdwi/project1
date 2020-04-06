@@ -23,7 +23,7 @@
                                                 <th scope="row">#</th>
                                                     <th>Nota Id</th>
                                                     <th>Customer Id</th>
-                                                    <th>User Id</th>
+                                                    <th>Pegawai Id</th>
                                                     <th>Nota Date</th>
                                                     <th>Total Payment</th>
                                                     <th width="100">actions</th>

@@ -37,7 +37,7 @@
                                 <ul>
                                     <li><a href="customercreate"><span class="fa fa-align-justify"></span>Customer</a></li>
                                     <li><a href="categoriescreate"><span class="fa fa-align-justify"></span> Categories</a></li>
-                                    <li><a href="usercreate"><span class="fa fa-align-justify"></span>User</a></li>
+                                    <li><a href="pegawaicreate"><span class="fa fa-align-justify"></span>Pegawai</a></li>
                                     <li><a href="productcreate"><span class="fa fa-align-justify"></span>Produk</a></li>
                                 </ul>
                             </li>
@@ -59,7 +59,7 @@
                                 <ul>
                                     <li><a href="customerindex"><span class="fa fa-align-justify"></span>Customer</a></li>
                                     <li><a href="categoriesindex"><span class="fa fa-align-justify"></span> Categories</a></li>
-                                    <li><a href="userindex"><span class="fa fa-align-justify"></span>User</a></li>
+                                    <li><a href="pegawaiindex"><span class="fa fa-align-justify"></span>Pegawai</a></li>
                                     <li><a href="productindex"><span class="fa fa-align-justify"></span>Produk</a></li>
                                 </ul>
                             </li>

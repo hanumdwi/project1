@@ -7,11 +7,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             
-                            <form class="form-horizontal" action="userstore" method="post">
+                            <form class="form-horizontal" action="pegawaiinsertdata" method="post">
                             @csrf
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><strong>Input Data User</strong></h3>
+                                    <h3 class="panel-title"><strong>Input Data Pegawai</strong></h3>
                                     <ul class="panel-controls">
                                         <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
                                     </ul>
@@ -41,7 +41,18 @@
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                                         <input type="text" class="form-control" id="lastname" name="lastname" />
                                                     </div>                                            
-                                                    <span class="help-block">This is sample of text field</span>
+                                                    <!-- <span class="help-block">This is sample of text field</span> -->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Username</label>
+                                                <div class="col-md-9">                                            
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                        <input type="text" class="form-control" id="username" name="username" />
+                                                    </div>                                            
+                                                    <!-- <span class="help-block">This is sample of text field</span> -->
                                                 </div>
                                             </div>
 
@@ -78,6 +89,17 @@
                                                 </div>
                                             </div>
 
+                                        <div class="form-group">
+                                                <label class="col-md-3 control-label">Confirm Password</label>
+                                                <div class="col-md-9">                                            
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                        <input type="password" class="form-control" name="password" id="copass" onkeyup="cekPass()" />
+                                                        <p id="error" style="color:red"></p>
+                                                    </div>         
+                                                </div>
+                                            </div>
+
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Job Status</label>
                                                 <div class="col-md-9">                                            
@@ -103,5 +125,26 @@
                     </div>                    
                     
                 </div>
-                <!-- END PAGE CONTENT WRAPPER -->  
+                <!-- END PAGE CONTENT WRAPPER --> 
+
+                <script>
+                function cekPass()
+                {
+                var pass = document.getElementById('password').value;
+                var copass = document.getElementById('copass').value;
+                var text = document.getElementById('error');
+                if(pass != copass)
+                {
+                text.style.color = 'red';
+                text.innerHTML='Password tidak cocok';
+                }
+                else
+                {
+                text.style.color = 'green';
+                text.innerHTML='Password Cocok';
+                }
+
+                }
+                </script>
+
                 @endsection

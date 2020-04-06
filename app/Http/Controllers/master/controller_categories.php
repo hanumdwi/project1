@@ -16,8 +16,9 @@ class controller_categories extends Controller
     public function index()
     {
         $categories = DB::table('categories')->get();
+        $product = DB::table('product')->get();
         //dump($categories);
-        return view ('master/categories/index',['categories' =>$categories]);
+        return view ('master/categories/index',['categories' =>$categories], ['product'=>$product]);
     }
 
     /**

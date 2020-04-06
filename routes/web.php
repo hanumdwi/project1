@@ -102,12 +102,13 @@ Route::post('categoriesupdate', 'master\controller_categories@update');
 Route::get('categoriesdestroy{id}', 'master\controller_categories@destroy');
 Route::post('categoriesupdateswitch', 'master\controller_categories@update_switch');
 
-Route::get('userindex', 'master\controller_user@index');
-Route::get('usercreate', 'master\controller_user@create');
-Route::post('userstore', 'master\controller_user@store');
-Route::get('useredit{id}', 'master\controller_user@edit');
-Route::post('userupdate', 'master\controller_user@update');
-Route::get('userdestroy{id}', 'master\controller_user@destroy');
+Route::get('pegawaiindex', 'master\controller_pegawai@index');
+Route::get('pegawaicreate', 'master\controller_pegawai@create');
+Route::post('pegawaiinsertdata', 'master\controller_pegawai@insertdata');
+Route::post('pegawaistore', 'master\controller_pegawai@store');
+Route::get('pegawaiedit{id}', 'master\controller_pegawai@edit');
+Route::post('pegawaiupdate', 'master\controller_pegawai@update');
+Route::get('pegawaidestroy{id}', 'master\controller_pegawai@destroy');
 
 
 Route::get('salesindex', 'transaksi\controller_sales@index');

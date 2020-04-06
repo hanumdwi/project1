@@ -17,13 +17,14 @@
                         
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped table-actions">
-                                        <a href="usercreate" class="btn btn-info my-3">Tambah Data User</a>
+                                        <a href="pegawaicreate" class="btn btn-info my-3">Tambah Data Pegawai</a>
                                             <thead>
                                                 <tr>
                                                 <th scope="row">#</th>
-                                                    <th width="50">id</th>
+                                                    <th width="50">Pegawai Id</th>
                                                     <th>First Name</th>
                                                     <th>Last Name</th>
+                                                    <th>Username</th>
                                                     <th>Phone</th>
                                                     <th width="100">Email</th>
                                                     <th width="100">Password</th>
@@ -33,12 +34,13 @@
                                                 </tr>
                                             </thead>
                                             <tbody>                                            
-                                                    @foreach($user as $u)
+                                                    @foreach($pegawai as $u)
                                                     <tr>
                                                     <th scope="row">{{ $loop->iteration }}</th>
                                                     <td>{{ $u -> user_id }}</td>
                                                     <td>{{ $u -> first_name }}</td>
                                                     <td>{{ $u -> last_name }}</td>
+                                                    <td>{{ $u -> username }}</td>
                                                     <td>{{ $u -> phone }}</td>
                                                     <td>{{ $u -> email }}</td>
                                                     <td>{{ $u -> password }}</td>
@@ -49,7 +51,7 @@
                                                                     <td><span class="label label-primary">Non-Active</span></td>
                                                             @endif
                                                     
-                                                    <td><a href="useredit{{$u -> user_id}}">
+                                                    <td><a href="pegawaiedit{{$u -> user_id}}">
                                                     <button type="button" class="btn btn-light">
                                                     <svg class="bi bi-pencil" width="3em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M13.293 3.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM14 4l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"></path>
@@ -70,7 +72,7 @@
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Delete user</h5>
+                                                                <h5 class="modal-title" id="exampleModalLabel">Delete Pegawai</h5>
                                                                 
                                                                
                                                               
@@ -80,7 +82,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                <a href="userdestroy{{$u -> user_id}}" ><button type="button" class="btn btn-primary">Delete</button></a>
+                                                                <a href="pegawaidestroy{{$u -> user_id}}" ><button type="button" class="btn btn-primary">Delete</button></a>
                                                             </div>
                                                             </div>
                                                         </div>
