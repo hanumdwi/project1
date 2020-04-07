@@ -5,18 +5,15 @@
 @section('container')
    
  <!-- START RESPONSIVE TABLES -->
- <div class="row">
+                <div class="row">
                         <div class="col-md-15 col-sm-15 col-xs-15">
-                            <!-- <div class="panel panel-default"> -->
-                                <!-- <div class="panel-heading"> -->
                                     <h3 class="panel-title">Point of Sales</h3>
                                     <br>
                                     <br>
-                                <!-- </div> -->
-                                
- <div class="x_content">
+                            </div>
+                    </div>
+ <!-- <div class="x_content"> -->
                     <form class="form-horizontal form-label-left" action="#" method="POST">
-
                       <div class="item form-group ">
                         <label class="control-label col-md-2 col-sm-2 col-xs-2" for="categoriesid"> Categories Id<span class="required">*</span>
                         </label>
@@ -49,6 +46,7 @@
                                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
+                                        
                                         <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -70,6 +68,7 @@
                                         <tbody>
                                             @foreach($product as $p)
                                             <tr>
+                                            <!-- <td><input type="checkbox" name="record"></td> -->
                                             <th scope="row"><input type="checkbox" id="{{$p->product_id }}" ></th>
                                             <td>{{ $p->product_name}}</td>
                                             <td>{{ $p->product_price}}</td>
@@ -83,8 +82,8 @@
                                         <div class="modal-footer">
                                         <!-- <button type="button" class="btn btn-success" id="save" > -->
                                         <!-- <svg aria-hidden="true" width="2px" height="2px" focusable="false" data-prefix="far" class=""></svg> Add To Cart</button> -->
-                                        <font size="6"><button type="button" class="badge badge-info" data-dismiss="modal">Add</button></font>
-                                        <font size="6"><button type="button" class="badge badge-danger" data-dismiss="modal">Back</button></font>
+                                        <font size="6"><button type="button"  class="add-row" data-dismiss="modal">Add</button></font>
+                                        <font size="6"><button type="button" class="delete-row" data-dismiss="modal">Back</button></font>
                                         
                                         </div>
                                     </div>
@@ -112,41 +111,18 @@
                                             </thead>
                                             <tbody>                                            
                                             <tr>
+                                         
                                             <td><button type="button" class="btn btn-danger">
-                                            <i class="fa fa-times"></li>
-                                                        </button></td>
-                                                <td>Chitos</td>
-                                                <td>Rp. 10.000</td>
+                                            <i class="fa fa-times"></li></button></td>
+                                            <td>{{ $p->product_name}}</td>
+                                            <td>{{ $p->product_price}}</td>
                                                 <td><div class="quantity">
                                                     <span class="qty-minus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                                     <input type="number" class="qty-text" id="qty2" step="1" min="1" max="300" name="quantity" value="1">
                                                     <span class="qty-plus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                                 </div></td>
                                                 <td>Rp. 10.000</td></tr>
-                                            <tr>
-                                            <td><button type="button" class="btn btn-danger">
-                                            <i class="fa fa-times"></li>
-                                                        </button></td>
-                                                <td>Piattos</td>
-                                                <td>Rp. 5.000</td>
-                                                <td><div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty2" step="1" min="1" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                </div></td>
-                                                <td>Rp. 5.000</td></tr>
-                                            <tr>
-                                            <td><button type="button" class="btn btn-danger">
-                                            <i class="fa fa-times"></li>
-                                                        </button></td>
-                                                <td>Biskuit Regal</td>
-                                                <td>Rp. 20.000</td>
-                                                <td><div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty2" step="1" min="1" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                </div></td>
-                                                <td>Rp. 20.000</td></tr>
+                                               
                                             </tbody>
                                         </table>
                                     </div>       
@@ -274,5 +250,22 @@
      document.getElementById("search").value='';
     }
 
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+        
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });    
 </script>
 @endsection

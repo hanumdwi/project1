@@ -114,8 +114,7 @@ class controller_pegawai extends Controller
             'phone'        => $request->phone,
             'email'        => $request->email,
             'password'     => $request->password,
-            'job_status'   => $request->jobstatus,
-            'status'       => $request->status
+            'job_status'   => $request->jobstatus
         ]);
      
              return redirect('pegawaiindex');

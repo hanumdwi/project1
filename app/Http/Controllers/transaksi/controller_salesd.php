@@ -5,6 +5,7 @@ namespace App\Http\Controllers\transaksi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Pegawai;
 
 class controller_salesd extends Controller
 {
@@ -25,9 +26,12 @@ class controller_salesd extends Controller
      */
     public function create()
     {
+        $customer = DB::table('customer')->get();
+        $pegawai = Pegawai::all();
         $categories = DB::table('categories')->get();
         $product = DB::table('product')->get();
-        return view('transaksi/salesd/create',['categories' =>$categories, 'product'=>$product]);
+        $detail_sales = DB::table('detail_sales')->get();
+        return view('transaksi/salesd/create',['customer'=>$customer, 'pegawai' =>$pegawai,'categories' =>$categories, 'product'=>$product, 'detail_sales'=>$detail_sales]);
     }
 
     /**

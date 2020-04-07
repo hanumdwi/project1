@@ -100,7 +100,7 @@
                             </div>
                                 </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
         <label class="col-md-3 control-label">Status</label>
         <div class="col-md-9">                                            
             <div class="input-group">
@@ -109,7 +109,7 @@
                         <option value="0">Non-Active</option>
                         </select>
                             </div>
-                                </div>
+                                </div> -->
         
                                 
 		<button type="submit" class="btn btn-info mt-3">Simpan Data</button>

@@ -77,8 +77,8 @@ class controller_product extends Controller
      */
     public function edit($id)
     {
-        $pegawai = Pegawai::where('user_id', $id)->get();
-        $categories = DB::where('categories')->get();
+
+        $categories = DB::table('categories')->get();
         $product = Product::where('product_id', $id)->get();
 		// passing data product yang didapat ke view edit.blade.php
 		return view('master.product.edit',['product' => $product], ['categories' => $categories]);
@@ -99,8 +99,7 @@ class controller_product extends Controller
             'product_name'     => $request->product_name,
             'product_price'     => $request->product_price,
             'product_stock'     => $request->product_stock,
-            'explanation'       => $request->explanation,
-            'status'            => $request->status
+            'explanation'       => $request->explanation
         ]);
      
              return redirect('productindex');

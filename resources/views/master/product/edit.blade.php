@@ -87,19 +87,16 @@
                             </div>
                                 </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
         <label class="col-md-3 control-label">Status</label>
         <div class="col-md-9">                                            
             <div class="input-group">
-                <!-- <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                    <input type="text" class="form-control" id="status" name="status" value="{{ $c->status }}"><br/></div>                                            
-                        <span class="help-block"></span> -->
                         <select name="status" id="status" class="form-control col-md-7 col-xs-12">
                         <option value="1">Active</option>
                         <option value="0">Non-Active</option>
                         </select>
                             </div>
-                                </div>
+                                </div> -->
         
 		<button type="submit" class="btn btn-info mt-3">Simpan Data</button>
 	</form>
